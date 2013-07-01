@@ -1,7 +1,29 @@
 = Oscon-2013-docs-workshop
 
-
 Materials and related resources for the OSCON 2013 Workshop: Easier Documentation, Simpler Websites And Faster Collaboration
+
+== When and Where
+
+=== Workshop
+
+* Date: July, 23, 2012
+* Time: 1:30 PM
+* Room: D139/140
+
+http://www.oscon.com/oscon2013/public/schedule/detail/29335[Workshop URL]
+
+=== General
+
+.Conference Dates
+
+July 22-26, 2013
+
+.Conference Location
+Oregon Convention Center
+777 NE Martin Luther King, Jr. Blvd.,
+Portland, Oregon 972322
+
+http://www.oscon.com/oscon2013[Conference URL]
 
 == Abstract
 
@@ -24,7 +46,7 @@ TUTORIAL REQUIREMENTS AND INSTRUCTIONS FOR ATTENDEES
 Knowledge of HTML is essential. Some knowledge of git and Ruby is useful, though a novice should be able to pick up the necessary training “on the job”.
 
 * Laptop
-* GitHub account: http://github.com
+* http://github.com[GitHub account]
 * Ruby 1.9 (or JRuby 1.7)
 * Git client
 * Text editor
