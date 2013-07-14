@@ -10,15 +10,14 @@ Dan Allen
 This tutorial...
 
 ////
-inserting image
-inserting video
-inserting source code
+sidebar in layout (and other layouts like on reuze.me)
 inserting gist
 sentence per line
 post excerpt and other types of "chunks" (chunked content)
 link to tutorial for pushing to github pages
 styles for posts listing page (headings too big)
 tip about not loading certain extensions when profile is development
+favicon
 ////
 
 == Install Awestruct
@@ -381,6 +380,8 @@ gem 'asciidoctor', '>= 0.1.4.pre'
 .Update gems
  $ bundle update
 
+// QUESTION should this be `bundle install` instead?
+
 .Console output
 ....
 Fetching gem metadata from https://rubygems.org/...
@@ -560,7 +561,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::Partial
 
   extension Awestruct::Extensions::Posts.new '/posts'
-  extension Awestruct::Extensions::Paginator.new :posts, '/index', :per_page => 5
+  extension Awestruct::Extensions::Paginator.new :posts, '/index', :page_name => 'posts/page', :per_page => 5
   extension Awestruct::Extensions::Atomizer.new :posts, '/feed.xml', :num_entries => 10
 end
 ----
@@ -568,7 +569,7 @@ end
 .Create a directory for partials (includes) in the project root
  $ mkdir _partials
 
-.Create a partial, +_partials/post-content.html.haml+ to layout the post
+.Create a partial, +_partials/post.html.haml+ to layout the post
 [source,haml]
 ----
 %article.post
@@ -590,7 +591,7 @@ end
 ---
 layout: base
 ---
-=partial 'post-content.html.haml', :post => page
+=partial 'post.html.haml', :post => page
 ----
 
 .Create the layout for pagination, +_partials/pagination.html.haml+
@@ -631,8 +632,8 @@ layout: base
 .row
   .large-12.columns.posts
     - page.posts.each do |post|
-      =partial 'post-content.html.haml', :post => post, :index => true
-    =partial 'pagination.html.haml', :posts => page.posts
+      =partial 'post.html.haml', :post => post, :listing => true
+    =partial 'pagination.html.haml', :paginator => page.posts
 ----
 
 .Create a post, +posts/docs-workshop-oscon-2013.adoc+
@@ -657,17 +658,17 @@ TIP: The default layout for a post is +post+, so you don't have to specify it in
 .Clean and preview site to see changes
  $ rake clean preview
 
-.Enable tagger extension below Paginator in +_ext/pipeline.rb+
+.Enable Tagger extension below Paginator in +_ext/pipeline.rb+
 [source,ruby]
 extension Awestruct::Extensions::Tagger.new :posts, '/index', 'posts/tag', :per_page => 5
 
-.Add tag links to bottom of +_partials/post-content.html.haml+
+.Add tag links to bottom of +_partials/post.html.haml+
 ----
   %footer.post-footer
     - if page.post.tags
       .tags
-        %span.title
-          tags:
+        %i.label.icon-tags
+        =' '
         =page.post.tag_links
 ----
 
@@ -795,11 +796,11 @@ disqus: writeadapt
 disqus_generate_id: true
 disqus_developer: true
 
-.Edit +_partials/post-content.html.haml+ to add Disqus comments
+.Edit +_partials/post.html.haml+ to add Disqus comments
 [source,haml]
 ----
-  %hr
   - if !page.listing
+    %hr
     - if site.disqus && !site.disqus_developer
       #comments
         =page.post.disqus_comments
@@ -827,3 +828,30 @@ google_analytics: UA-00000000-1
 
 .Clean and preview site to see changes
  $ rake clean preview
+
+== Chunked content
+
+=== Post excerpt
+
+[source,asciidoc]
+----
+:excerpt: Excerpt of post.
+:awestruct-excerpt: {excerpt}
+
+{excerpt}
+----
+
+[source,haml]
+----
+  .post-body
+    - if page.listing
+      %p=page.post.excerpt || summarize(html_to_text(page.post.content), 100)
+      %p
+        %a.small.secondary.button{:href=>page.post.url} Read more...
+    - else
+      =page.post.content
+----
+
+=== Post image
+
+// TODO
