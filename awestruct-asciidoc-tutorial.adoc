@@ -6,6 +6,7 @@ Dan Allen
 :idprefix:
 :idseparator: -
 :icons: font
+:source-highlighter: coderay
 
 This tutorial...
 
@@ -17,7 +18,11 @@ post excerpt and other types of "chunks" (chunked content)
 link to tutorial for pushing to github pages
 styles for posts listing page (headings too big)
 tip about not loading certain extensions when profile is development
+slides
 favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
 ////
 
 == Install Awestruct
@@ -346,23 +351,25 @@ After running this command, the the +.gitignore+ file should have the following 
 
 Now, any changes you make will be tracked by git, and you can rollback at any time.
 
-== Configure website name, title and organization
+== Configure website name, title, author and organization
 
 .Change values in +_config/site.yml+
 [source,yaml]
-name: WriteAdapt
+name: Write__Adapt__
 title: WriteAdapt - For People Who Love Content
 org: Strategy Media
+author: The Octocat
+author_url: https://github.com/octocat
 base_url: ''
 
 .Tweak a few settings by adding these lines to +_config/site.yml+
 [source,yaml]
 ----
-interpolate: false <1>
+interpolate: false #<1>
 haml:
-  :ugly: true      <2>
+  :ugly: true #<2>
 ----
-<1> Disables interpolation of Ruby variable expressions in content (e.g., +#{name}+)
+<1> Disables interpolation of Ruby variable expressions in content (e.g., `#{name}`)
 <2> Disables pretty printing (indentation) of HTML output
 
 .Clean and preview site to see changes
@@ -415,14 +422,14 @@ Using bundler (1.3.5)
 Your bundle is updated!
 ....
 
-.Create a page in AsciiDoc format
+.Create a page in AsciiDoc format, +about.adoc+
 [source,asciidoc]
 ----
-= About WriteAdapt <1>
+= About {site_name} <1>
 Your Name
 :awestruct-layout: base <2>
 
-WriteAdapt was founded by {author} at a conference workshop.
+{site_name} was founded by {author} during a conference workshop.
 It's quickly becoming much bigger than these humble beginnings.
 
 This page is written in http://asciidoc.org[AsciiDoc].
@@ -454,6 +461,7 @@ Attribute names that begin with +awestruct-+ are passed to Awestruct as front-ma
 asciidoctor:
   :safe: safe
   :attributes:
+    site_name: WriteAdapt
     idprefix: ''
     idseparator: '-'
     icons: font
@@ -463,6 +471,11 @@ asciidoctor:
 
 == Configure a theme for AsciiDoc and the website
 
+.Clone Asciidoctor stylesheet factory as submodule
+ $ git submodule add -b embedded-stylesheets \
+ https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git stylesheets/_themes
+
+////
 .Switch to the stylesheets directory
  $ cd stylesheets
 
@@ -471,9 +484,11 @@ asciidoctor:
 
 .Switch back to the project root
  $ cd ..
+////
+
 
 .Replace content of +stylesheets/app.scss+ to configure theme
-[source,scss]
+[source,css]
 ----
 @import "_themes/sass/foundation-embedded.scss";
 @import "foundation/components/buttons";
@@ -518,25 +533,28 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
       ~ content
 ----
 
-.Edit +index.html.haml+ to remove horizontal rule under page title
+.Edit +index.html.haml+ to remove horizontal rule under page title and format site name
 [source,haml]
 ----
 .row
   .large-12.columns
-    %h1 Welcome to #{site.name}!
+    %h1 Welcome to #{Asciidoctor.render site.name, :doctype => :inline}!
 ----
 
-////
-#{Asciidoctor.render site.name, :doctype => :inline}
-
-%a(href="#{site.base_url}/")=Asciidoctor.render(site.name, :doctype => :inline)
-////
+.Edit +_layouts/base.html.haml+ to format site name
+[source,haml]
+----
+      %li.name
+        %h1
+          %a(href="#{site.base_url}/")=Asciidoctor.render(site.name, :doctype => :inline)
+----
 
 .Add lines to +_config/site.yml+ to configure Asciidoctor
 [source,yaml]
 asciidoctor:
   :safe: safe
   :attributes:
+    site_name: WriteAdapt
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -578,7 +596,9 @@ end
       %a{:href=>page.post.url}=page.post.title
     %h4
       %em by
-      %span.author=page.post.author
+      %a.author{:href=>page.post.author_url || site.author_url}
+        %img{:src=>"#{page.post.author_url || site.author_url}.png"}(width=24 height=24)
+        =page.post.author || site.author
       on
       %time.pubdate{:datetime=>page.post.date.strftime '%FT%T%:z'}=page.post.date.strftime '%B %e, %Y'
   .post-body
@@ -668,8 +688,7 @@ extension Awestruct::Extensions::Tagger.new :posts, '/index', 'posts/tag', :per_
     - if page.post.tags
       .tags
         %i.label.icon-tags
-        =' '
-        =page.post.tag_links
+        =" #{page.post.tag_links}"
 ----
 
 .Clean and preview site to see changes
@@ -703,6 +722,7 @@ CAUTION: Relative links must now be prefixed with +../+ to escape from directory
 asciidoctor:
   :safe: safe
   :attributes:
+    site_name: WriteAdapt
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -768,6 +788,19 @@ They'll be proud ;)
 [caption=""]
 .GitHub trainers, Matthew and Tim
 image::github-trainers.jpg[]
+----
+
+.Add +imagesdir+ attribute below document title to enable images in GitHub preview
+[source,asciidoc]
+:imagesdir: ../images
+
+.Conditional hack to get post title to show on GitHub
+[source,asciidoc]
+----
+ifndef::icons[]
+[float]
+= Docs Workshop at OSCON 2013
+endif::icons[]
 ----
 
 === Videos
@@ -854,4 +887,12 @@ google_analytics: UA-00000000-1
 
 === Post image
 
-// TODO
+// TODO (see Brian's blog)
+
+== Custom domain name
+
+.Edit +CNAME+ at project root
+yourdomain.com
+
+NOTE: You'll need to point the DNS for your domain at the GitHub Pages server.
+See https://help.github.com/articles/setting-up-a-custom-domain-with-pages[Setting up a custom domain with GitHub Pages] for instructions.
