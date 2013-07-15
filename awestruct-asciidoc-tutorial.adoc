@@ -320,26 +320,26 @@ _site/
 
 .Instruct git to ignore generated files 
  $ cat > .gitignore << LINES
- /.awestruct/
- /.ruby-*
- /.sass-cache/
- /_site/
- /_tmp/
- /Gemfile.lock
- /stylesheets/_themes/
+ .awestruct/
+ .ruby-*
+ .sass-cache/
+ _site/
+ _tmp/
+ Gemfile.lock
+ stylesheets/_themes/
  LINES
 
 [NOTE]
 ====
 After running this command, the the +.gitignore+ file should have the following content:
 
- /.awestruct/
- /.ruby-*/
- /.sass-cache/
- /_site/
- /_tmp/
- /Gemfile.lock
- /stylesheets/_themes/
+ .awestruct/
+ .ruby-*/
+ .sass-cache/
+ _site/
+ _tmp/
+ Gemfile.lock
+ stylesheets/_themes/
 
 ====
 
