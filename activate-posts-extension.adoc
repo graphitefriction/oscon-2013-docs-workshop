@@ -1,0 +1,172 @@
+= Activate posts extension (blog, news, etc)
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Configure a theme for AsciiDoc and the website
+
+Tutorial 8
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Create the posts directory in the project root
+
+ $ mkdir posts
+
+== Enable the Posts extensions and Partial helper in +_ext/pipeline.rb+
+
+[source,ruby]
+----
+Awestruct::Extensions::Pipeline.new do
+  helper Awestruct::Extensions::Partial
+
+  extension Awestruct::Extensions::Posts.new '/posts'
+  extension Awestruct::Extensions::Paginator.new :posts, '/index', :page_name => 'posts/page', :per_page => 5
+  extension Awestruct::Extensions::Atomizer.new :posts, '/feed.xml', :num_entries => 10
+end
+----
+
+== Create a directory for partials (i.e., include files) in the project root
+
+ $ mkdir _partials
+
+== Create a partial, +_partials/post.html.haml+, to layout the post
+
+[source,haml]
+----
+%article.post
+  %header.post-head
+    %h1.title
+      %a{:href=>page.post.url}=page.post.title
+    %h4
+      %em by
+      %a.author{:href=>page.post.author_url || site.author_url}
+        %img{:src=>"#{page.post.author_url || site.author_url}.png"}(width=24 height=24)
+        =page.post.author || site.author
+      on
+      %time.pubdate{:datetime=>page.post.date.strftime '%FT%T%:z'}=page.post.date.strftime '%B %e, %Y'
+  .post-body
+    =page.post.content
+----
+
+== Create the layout for a post, +_layout/post.html.haml+
+
+[source,haml]
+----
+---
+layout: base
+---
+=partial 'post.html.haml', :post => page
+----
+
+== Create the layout for pagination, +_partials/pagination.html.haml+
+
+[source,haml]
+----
+- paginator = page.posts
+.pagination-centered
+  %ul.pagination
+    - if paginator.previous_page
+      %li.arrow
+        %a{:href=>paginator.previous_page.url}
+          %i.icon-step-backward
+    - else
+      %li.arrow.unavailable
+        %a{:href=>'#'}
+          %i.icon-step-backward
+    %li #{paginator.current_page_index + 1} of #{paginator.pages.size}
+    - if paginator.next_page
+      %li.arrow
+        %a{:href=>paginator.next_page.url}
+          %i.icon-step-forward
+    - else
+      %li.arrow.unavailable
+        %a{:href=>'#'}
+          %i.icon-step-forward
+----
+
+== Edit +index.html.haml+ to show all posts on front page
+
+[source,haml]
+----
+---
+layout: base
+---
+.row
+  .large-12.columns
+    %h1 Welcome to #{Asciidoctor.render site.name, :doctype => :inline}!
+
+.row
+  .large-12.columns.posts
+    - page.posts.each do |post|
+      =partial 'post.html.haml', :post => post, :listing => true
+    =partial 'pagination.html.haml', :paginator => page.posts
+----
+
+== Create a post, +posts/docs-workshop-oscon-2013.adoc+
+
+[source,asciidoc]
+----
+= Docs Workshop at OSCON 2013
+Author Name
+2013-07-22
+:awestruct-tags: [conference, oscon]
+
+Content of first post, reporting from OSCON!
+----
+
+TIP: The default layout for a post is +post+, so you don't have to specify it in the AsciiDoc header.
+
+== Add Atom feed to +_layouts/base.html.haml+
+
+[source,haml]
+----
+%link{:rel=>'alternate', :type=>'application/atom+xml', :href=>"#{site.base_url}/feed.xml"}
+----
+
+== Clean and preview site to see changes
+
+ $ rake clean preview
+
+== Enable Tagger extension below Paginator in +_ext/pipeline.rb+
+
+[source,ruby]
+extension Awestruct::Extensions::Tagger.new :posts, '/index', 'posts/tag', :per_page => 5
+
+== Add tag links to bottom of +_partials/post.html.haml+
+
+----
+  %footer.post-footer
+    - if page.post.tags
+      .tags
+        %i.label.icon-tags
+        =" #{page.post.tag_links}"
+----
+
+== Clean and preview site to see changes
+
+ $ rake clean preview
+
+
+== Next: Extensionless URLs

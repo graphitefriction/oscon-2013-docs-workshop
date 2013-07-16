@@ -1,5 +1,5 @@
-= Awestruct + AsciiDoc Tutorial
-Dan Allen
+= Install Awestruct
+Dan Allen; Sarah White
 :experimental:
 :toc2:
 :sectanchors:
@@ -11,6 +11,7 @@ Dan Allen
 This tutorial...
 
 ////
+Step 1
 sidebar in layout (and other layouts like on reuze.me)
 inserting gist
 sentence per line
@@ -26,17 +27,18 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
-== Install Awestruct
+== Install RVM (Linux and MacOSX)
 
-.Install RVM (Linux and MacOSX)
  $ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
 
-.Setup fresh Ruby gemset
+== Setup fresh Ruby gemset
+
  $ rvm use 1.9.3@writeadapt --create
 
 TIP: If you want to use Ruby 2.0, replace +1.9.3+ with +2.0.0+ in the previous two commands.
 
-.Install Awestruct
+== Install Awestruct
+
  $ gem install awestruct
 
 .Console output
@@ -105,7 +107,8 @@ Successfully installed awestruct-0.5.2
 22 gems installed
 ....
 
-.Check version of Awestruct
+== Check version of Awestruct
+
  $ awestruct --version
 
 .Console output
@@ -118,126 +121,8 @@ Awestruct: 0.5.2
 http://awestruct.org/
 ....
 
-== Create a new Awestruct-based website project
+== Next: Create a new Awestruct-based website project
 
-.Make empty directory for website
- $ mkdir writeadapt
-
-.Switch to new directory
- $ cd writeadapt
-
-IMPORTANT: Don't forget to switch to the new directory or else the website will be generated in the wrong place.
-
-.Generate website structure seeded to use Foundation CSS framework
- $ awestruct -i -f foundation
-
-NOTE: The long hand version of the previous command is +awestruct --init --framework foundation+.
-
-.Console output
-....
-WARNING: Missing required dependency to activate optional built-in extension minify.rb
-  cannot load such file -- htmlcompressor
-WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
-  cannot load such file -- coffee-script
-Create directory: /path/to/writeadapt/_config
-Create directory: /path/to/writeadapt/_layouts
-Create directory: /path/to/writeadapt/_ext
-Create file: /path/to/writeadapt/_ext/pipeline.rb
-Create file: /path/to/writeadapt/.awestruct_ignore
-Create file: /path/to/writeadapt/Rakefile
-Create file: /path/to/writeadapt/Gemfile
-Create directory: /path/to/writeadapt/stylesheets
-directory _site/stylesheets/ 
-directory javascripts/foundation/ 
-directory javascripts/vendor/ 
-   create stylesheets/_normalize.scss 
-   create stylesheets/_settings.scss 
-   create stylesheets/app.scss 
-   create humans.txt 
-   create robots.txt 
-   create MIT-LICENSE.txt 
-   create javascripts/foundation/foundation.orbit.js 
-   create javascripts/foundation/foundation.cookie.js 
-   create javascripts/foundation/foundation.clearing.js 
-   create javascripts/foundation/foundation.magellan.js 
-   create javascripts/foundation/foundation.section.js 
-   create javascripts/foundation/foundation.alerts.js 
-   create javascripts/foundation/foundation.topbar.js 
-   create javascripts/foundation/foundation.joyride.js 
-   create javascripts/foundation/foundation.interchange.js 
-   create javascripts/foundation/foundation.forms.js 
-   create javascripts/foundation/foundation.tooltips.js 
-   create javascripts/foundation/foundation.dropdown.js 
-   create javascripts/foundation/foundation.placeholder.js 
-   create javascripts/foundation/foundation.reveal.js 
-   create javascripts/vendor/custom.modernizr.js 
-   create javascripts/vendor/jquery.js 
-   create javascripts/vendor/zepto.js 
-   create javascripts/foundation/foundation.js 
-   create index.html 
-   create _site/stylesheets/app.css 
-
-Now you're awestruct!
-
-To generate and run your site in development mode, execute:
-
-  awestruct -d
-
-or, simply:
-
-  rake
-
-then visit your site at: http://localhost:4242
-
-Create file: /path/to/writeadapt/_config/site.yml
-Create file: /path/to/writeadapt/_layouts/base.html.haml
-Create file: /path/to/writeadapt/index.html.haml
-....
-
-.Website project file tree
-....
-.
-|-- .awestruct/
-|   `-- debug.log
-|-- .awestruct_ignore
-|-- _config/
-|   `-- site.yml
-|-- _ext/
-|   `-- pipeline.rb
-|-- Gemfile
-|-- humans.txt
-|-- index.html.haml
-|-- javascripts/
-|   |-- foundation/
-|   |   |-- foundation.alerts.js
-|   |   |-- foundation.clearing.js
-|   |   |-- foundation.cookie.js
-|   |   |-- foundation.dropdown.js
-|   |   |-- foundation.forms.js
-|   |   |-- foundation.interchange.js
-|   |   |-- foundation.joyride.js
-|   |   |-- foundation.js
-|   |   |-- foundation.magellan.js
-|   |   |-- foundation.orbit.js
-|   |   |-- foundation.placeholder.js
-|   |   |-- foundation.reveal.js
-|   |   |-- foundation.section.js
-|   |   |-- foundation.tooltips.js
-|   |   `-- foundation.topbar.js
-|   `-- vendor/
-|       |-- custom.modernizr.js
-|       |-- jquery.js
-|       `-- zepto.js
-|-- _layouts/
-|   `-- base.html.haml
-|-- Rakefile
-|-- robots.txt
-|-- _site/
-`-- stylesheets/
-    |-- app.scss
-    |-- _normalize.scss
-    `-- _settings.scss
-....
 
 .Install Rake and Bundler
  $ gem install rake bundler
@@ -314,6 +199,8 @@ _site/
     `-- app.css
 ....
 
+== Next: Use git to take a snapshot of initial state
+
 == Use git to take a snapshot of initial state
 
 .Initialize new git repository
@@ -351,6 +238,8 @@ After running this command, the the +.gitignore+ file should have the following 
  $ git commit -m 'initial import'
 
 Now, any changes you make will be tracked by git, and you can rollback at any time.
+
+== Next: Configure website name, title, author and organization
 
 == Configure website name, title, author and organization
 

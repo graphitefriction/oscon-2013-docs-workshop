@@ -1,0 +1,73 @@
+= Use git to take a snapshot of initial state
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Install Rake and Bundler
+
+Tutorial 4
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Initialize new git repository
+
+ $ git init .
+
+== Instruct git to ignore generated files
+ 
+ $ cat > .gitignore << LINES
+ /.awestruct/
+ /.ruby-*
+ /.sass-cache/
+ /_site/
+ /_tmp/
+ /Gemfile.lock
+ /stylesheets/_themes/
+ LINES
+
+[NOTE]
+====
+After running this command, the the +.gitignore+ file should have the following content:
+
+ /.awestruct/
+ /.ruby-*/
+ /.sass-cache/
+ /_site/
+ /_tmp/
+ /Gemfile.lock
+ /stylesheets/_themes/
+
+====
+
+== Add all non-ignored files to the git repository
+
+ $ git add .
+
+== Commit the changes to make the snapshot
+
+ $ git commit -m 'initial import'
+
+Now, any changes you make will be tracked by git, and you can rollback at any time.
+
+== Next: Configure website name, title, author and organization

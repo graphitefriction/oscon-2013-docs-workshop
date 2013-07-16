@@ -1,0 +1,42 @@
+= Custom Domain Name
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Chunked Content
+
+Tutorial 14
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+
+== Custom domain name
+
+.Edit +CNAME+ at project root
+yourdomain.com
+
+NOTE: You'll need to point the DNS for your domain at the GitHub Pages server.
+See https://help.github.com/articles/setting-up-a-custom-domain-with-pages[Setting up a custom domain with GitHub Pages] for instructions.
+
+== Next: 

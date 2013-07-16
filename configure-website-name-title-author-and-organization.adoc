@@ -1,0 +1,61 @@
+= Configure website name, title, author and organization
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Setup a git repository for your website project
+
+Tutorial 5
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Change values in +_config/site.yml+
+
+[source,yaml]
+name: Write__Adapt__
+title: WriteAdapt - For People Who Love Content
+org: Strategy Media
+author: The Octocat
+author_url: https://github.com/octocat
+base_url: ''
+
+== Tweak a few settings by adding these lines to +_config/site.yml+
+
+[source,yaml]
+----
+interpolate: false #<1>
+haml:
+  :ugly: true #<2>
+----
+<1> Disables interpolation of Ruby variable expressions in content (e.g., `#{name}`)
+<2> Disables pretty printing (indentation) of HTML output
+
+== Clean and preview site to see changes
+
+ $ rake clean
+ $ rake
+
+NOTE: The clean step is required since a change to the configuration file, +_config/site.yml+, does not force pages to be regenerated automatically.
+
+== Next: Activate AsciiDoc content

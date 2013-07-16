@@ -1,0 +1,70 @@
+= Using source code in your site
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Extensionless URLs
+
+Tutorial 10
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Edit +_config/site.yml+ to configure AsciiDoc source highlighter
+
+[source,yaml]
+asciidoctor:
+  :safe: safe
+  :attributes:
+    site_name: WriteAdapt
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    icons: font 
+    source-highlighter: coderay
+    coderay-css: style
+
+== Add CodeRay gem, +coderay+, to +Gemfile+
+
+[source,ruby]
+----
+gem 'coderay'
+----
+
+== Update gems
+
+ $ bundle update
+
+== Add some source code
+
+[source,asciidoc]
+....
+[source,ruby]
+----
+require 'asciidoctor'
+
+puts Asciidoctor.render('Write__Adapt__', :doctype => :inline)
+----
+....
+
+== Next: Using Images and Videos

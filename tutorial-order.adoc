@@ -1,0 +1,142 @@
+= Module and Tutorial Order
+Sarah White
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+== Project: Build a Basic Website with a Static Website Generator
+
+Create a website hosted on GitHub Pages to use for reporting your experiences at OSCON.
+
+=== Module 1: Project Overview and Tools
+
+A quick overview of the tools we’ll use to create the website.
+
+. Project Introduction (2-3m)
+. Introduction to the console and text editor
+. Introduction to Ruby (3m)
+. Introduction to git (3m)
+. Introduction to gems and bundler (3m)
+. Introduction to awestruct
+. Introduction to asciidoctor
+
+=== Module 2: Preparing your Linux / Mac / Windows workstation
+
+Using a console and text editor, we'll learn how to install and setup the tools needed to create and launch the website.
+
+. Setting up Ruby
+.. Console Hands On: Install Ruby
+. Setting up git
+.. Console Hands On: Install git
+. Setup execution PATH
+. Choosing your text editor
+
+=== Module 3: Setup a basic website
+
+With the built-in CSS grid system and styles, we'll launch a basic website baked by Awestruct
+
+. Install Awestruct
+. Setup a new website project with Awestruct
+. Install Rake and Bundler
+. Setup a git repository for your website project
+. Configure website name, title, author and organization
+. Activate AsciiDoc content
+. Configure a theme for AsciiDoc and the website
+
+== Project: Build a Blogging a Website with a Static Website Generator
+
+We will learn how to setup the Awestruct blog module, create posts, manage comments, and customize the blog's layout and functionality. 
+
+=== Module 1: Project Overview and Tools
+
+. Project Introduction
+. Awestruct pipeline
++
+*Sidebar:* Awestruct pipeline
+* How do I setup layouts for the blog index & posts
++
+NOTE: Make boilerplate code available on wiki
++
+. Haml and Slim Introduction
+*Sidebar:* layout files and Haml (or Slim)
+. Sass and Foundation Introduction
++
+*Sidebar:* SASS & Foundation primer
+. Travis CI introduction
+
+=== Module 2: Activate and configure the blog module in Awestruct
+
+. Activate posts extension (blog, news, etc)
+. Extensionless URLs
+
+=== Module 3: Writing a blog post
+
+You’ll learn how to add, tag, and categorize blog posts.
+
+. Create a blog post
+. Writing the blog post's header and metadata with AsciiDoc syntax
+. Using source code in your site
+. Using images and videos
+
+=== Module 4: Publishing your blog post
+
+* How do I publish my blog post? (A: as above)
+* How does the automatic publishing work?
+** Jekyll - automatic
+** Awestruct - via Travis CI
+* How do I setup a Travis account?
+* How do I link my Travis account to my GitHub account?
+* How do I activate Travis on my repository?
+* How do I configure Travis to publish my site?
+(git serves as your blog admin backend)
+
+=== Module 5: Setting up comments and analytics
+
+. Add Disqus Comments and Google Analytics
+. Custom Domain Name
+
+//
+
+* Configure?
+* Gravatars?
+
+=== Module 6: Customize look & feel / theme
+
+* How do I modify the layouts?
+* How do I modify the styles?
+
+== Project: Content Foundations
+
+. Chunked content
+
+. Content re-usability and chunks - what and why
+. Goals, constraints, and methods
+.. Content types and organization
+. Asciidoctor features that can help
+. Output, anyway you need it, anyway you like it
+.. multipart book/docs
+.. manpage
+.. easy, replaceable styling
+
+== Project: Collaboration
+
+* How does collaboration work?
+* How do I propose a revision or new content?
++
+*Sidebar:* Pull request primer
+* How do I send revisions to someone else's proposal?
+
+== Project: Add Rich Content, Responsive Design Features and Interactive Functionality to Your Website
+
+=== Module 1: Project Overview and Tools
+
+. Typography, images, video, audio, include files and data, social
+. Responsive grid and elements
+. Plugins, JQuery, JavaScript
+
+
+
+

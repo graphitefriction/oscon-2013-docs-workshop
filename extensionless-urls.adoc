@@ -1,0 +1,55 @@
+= Extensionless URLs
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Activate posts extension (blog, news, etc)
+
+Tutorial 9
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Edit +_ext/pipeline.rb+ to activate Indexifier extension
+
+[source,ruby]
+extension Awestruct::Extensions::Indexifier.new
+
+IMPORTANT: The Indexifier extension must come _before_ the Atomizer extension
+
+CAUTION: Relative links must now be prefixed with +../+ to escape from directory holding the "indexified" page.
+
+== Edit +_layouts/base.html.haml+ to update navigation links
+
+[source,haml]
+----
+        %li.divider
+          %li
+            %a{:href=>"#{site.base_url}/about"} About
+----
+
+== Clean and preview site to see changes
+
+ $ rake clean preview
+
+== Next: Using source code in your site

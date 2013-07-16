@@ -1,0 +1,131 @@
+= Configure a theme for AsciiDoc and the website
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Activate AsciiDoc content
+
+Tutorial 7
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Clone Asciidoctor stylesheet factory as a submodule
+
+ $ git submodule add -b embedded-stylesheets \
+ https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git stylesheets/_themes
+
+////
+
+== Switch to the stylesheets directory
+
+ $ cd stylesheets
+
+== Clone the Asciidoctor stylesheet factory repository
+
+ $ git clone --branch embedded-stylesheets https://github.com/asciidoctor/asciidoctor-stylesheet-factory _themes
+
+== Switch back to the project root
+
+ $ cd ..
+////
+
+
+== Replace content of +stylesheets/app.scss+ to configure theme
+
+[source,css]
+----
+@import "_themes/sass/foundation-embedded.scss";
+@import "foundation/components/buttons";
+@import "foundation/components/top-bar";
+@import "foundation/components/inline-lists";
+
+// fall through defaults
+$footer-bg: $body-font-color !default;
+$footer-font-color: invert($body-font-color) !default;
+
+.top-bar a {
+  text-decoration: none;
+}
+
+h1 em {
+  letter-spacing: 1px;
+}
+
+body > footer {
+  background: $footer-bg;
+  padding: $panel-padding;
+  color: $footer-font-color;
+}
+----
+
+TIP: Alternative themes include +asciidoctor-embedded+ and +rocket-panda-embedded+.
+
+== Add line at top of +_ext/pipeline.rb+ to load SASS functions for themes
+
+[source,ruby]
+require './stylesheets/_themes/lib/functions.rb'
+
+== Remove unnecessary files
+
+ $ rm stylesheets/{_normalize.scss,_settings.scss}
+
+IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
+
+== Edit +_layouts/base.html.haml+ to assign id to main content
+
+[source,haml]
+----
+  #content.row
+    .large-12.columns
+      ~ content
+----
+
+== Edit +index.html.haml+ to remove horizontal rule under page title and format site name
+
+[source,haml]
+----
+.row
+  .large-12.columns
+    %h1 Welcome to #{Asciidoctor.render site.name, :doctype => :inline}!
+----
+
+== Edit +_layouts/base.html.haml+ to format site name
+
+[source,haml]
+----
+      %li.name
+        %h1
+          %a(href="#{site.base_url}/")=Asciidoctor.render(site.name, :doctype => :inline)
+----
+
+== Clean and preview site to see changes
+
+ $ rake clean preview
+
+// TODO insert screenshot (shows larger h1 and lead paragraph)
+
+// TODO show what happens if awestruct-layout is not set
+
+== Next: Activate posts extension (blog, news, etc)
+

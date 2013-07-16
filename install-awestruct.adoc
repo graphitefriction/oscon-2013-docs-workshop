@@ -1,0 +1,126 @@
+= Install Awestruct
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Tutorial 1
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Install RVM (Linux and MacOSX)
+
+ $ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+
+== Setup fresh Ruby gemset
+
+ $ rvm use 1.9.3@writeadapt --create
+
+TIP: If you want to use Ruby 2.0, replace +1.9.3+ with +2.0.0+ in the previous two commands.
+
+== Install Awestruct
+
+ $ gem install awestruct
+
+.Console output
+....
+Fetching: tilt-1.4.1.gem (100%)
+Successfully installed tilt-1.4.1
+Fetching: haml-4.0.3.gem (100%)
+
+HEADS UP! Haml 4.0 has many improvements, but also has changes that may break
+your application:
+
+* Support for Ruby 1.8.6 dropped
+* Support for Rails 2 dropped
+* Sass filter now always outputs <style> tags
+* Data attributes are now hyphenated, not underscored
+* html2haml utility moved to the html2haml gem
+* Textile and Maruku filters moved to the haml-contrib gem
+
+For more info see:
+
+http://rubydoc.info/github/haml/haml/file/CHANGELOG.md
+
+Successfully installed haml-4.0.3
+Fetching: mini_portile-0.5.1.gem (100%)
+Successfully installed mini_portile-0.5.1
+Fetching: nokogiri-1.6.0.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed nokogiri-1.6.0
+Fetching: sass-3.2.9.gem (100%)
+Successfully installed sass-3.2.9
+Fetching: chunky_png-1.2.8.gem (100%)
+Successfully installed chunky_png-1.2.8
+Fetching: fssm-0.2.10.gem (100%)
+Successfully installed fssm-0.2.10
+Fetching: compass-0.12.2.gem (100%)
+Successfully installed compass-0.12.2
+Fetching: compass-960-plugin-0.10.4.gem (100%)
+Successfully installed compass-960-plugin-0.10.4
+Fetching: bootstrap-sass-2.3.2.0.gem (100%)
+Successfully installed bootstrap-sass-2.3.2.0
+Fetching: zurb-foundation-4.2.3.gem (100%)
+Successfully installed zurb-foundation-4.2.3
+Fetching: mime-types-1.23.gem (100%)
+Successfully installed mime-types-1.23
+Fetching: rest-client-1.6.7.gem (100%)
+Successfully installed rest-client-1.6.7
+Fetching: git-1.2.5.gem (100%)
+Successfully installed git-1.2.5
+Fetching: ruby-s3cmd-0.1.5.gem (100%)
+Successfully installed ruby-s3cmd-0.1.5
+Fetching: rb-fsevent-0.9.3.gem (100%)
+Successfully installed rb-fsevent-0.9.3
+Fetching: ffi-1.9.0.gem (100%)
+Building native extensions.  This could take a while...
+Successfully installed ffi-1.9.0
+Fetching: rb-inotify-0.9.0.gem (100%)
+Successfully installed rb-inotify-0.9.0
+Fetching: rb-kqueue-0.2.0.gem (100%)
+Successfully installed rb-kqueue-0.2.0
+Fetching: listen-1.2.2.gem (100%)
+Successfully installed listen-1.2.2
+Fetching: rack-1.5.2.gem (100%)
+Successfully installed rack-1.5.2
+Fetching: awestruct-0.5.2.gem (100%)
+Successfully installed awestruct-0.5.2
+22 gems installed
+....
+
+== Check version of Awestruct
+
+ $ awestruct --version
+
+.Console output
+....
+WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Awestruct: 0.5.2
+http://awestruct.org/
+....
+
+== Next: Setup a new website project with Awestruct
+

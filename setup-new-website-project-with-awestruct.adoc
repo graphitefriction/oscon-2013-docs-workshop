@@ -1,0 +1,155 @@
+= Setup a new Awestruct-based website project
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous Tutorial: Install Awestruct
+
+Tutorial 2
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Make empty directory for website
+
+ $ mkdir writeadapt
+
+== Switch to new directory
+
+ $ cd writeadapt
+
+IMPORTANT: Don't forget to switch to the new directory or else the website will be generated in the wrong place.
+
+== Generate website structure seeded to use Foundation CSS framework
+ $ awestruct -i -f foundation
+
+NOTE: The long hand version of the previous command is +awestruct --init --framework foundation+.
+
+.Console output
+....
+WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Create directory: /path/to/writeadapt/_config
+Create directory: /path/to/writeadapt/_layouts
+Create directory: /path/to/writeadapt/_ext
+Create file: /path/to/writeadapt/_ext/pipeline.rb
+Create file: /path/to/writeadapt/.awestruct_ignore
+Create file: /path/to/writeadapt/Rakefile
+Create file: /path/to/writeadapt/Gemfile
+Create directory: /path/to/writeadapt/stylesheets
+directory _site/stylesheets/ 
+directory javascripts/foundation/ 
+directory javascripts/vendor/ 
+   create stylesheets/_normalize.scss 
+   create stylesheets/_settings.scss 
+   create stylesheets/app.scss 
+   create humans.txt 
+   create robots.txt 
+   create MIT-LICENSE.txt 
+   create javascripts/foundation/foundation.orbit.js 
+   create javascripts/foundation/foundation.cookie.js 
+   create javascripts/foundation/foundation.clearing.js 
+   create javascripts/foundation/foundation.magellan.js 
+   create javascripts/foundation/foundation.section.js 
+   create javascripts/foundation/foundation.alerts.js 
+   create javascripts/foundation/foundation.topbar.js 
+   create javascripts/foundation/foundation.joyride.js 
+   create javascripts/foundation/foundation.interchange.js 
+   create javascripts/foundation/foundation.forms.js 
+   create javascripts/foundation/foundation.tooltips.js 
+   create javascripts/foundation/foundation.dropdown.js 
+   create javascripts/foundation/foundation.placeholder.js 
+   create javascripts/foundation/foundation.reveal.js 
+   create javascripts/vendor/custom.modernizr.js 
+   create javascripts/vendor/jquery.js 
+   create javascripts/vendor/zepto.js 
+   create javascripts/foundation/foundation.js 
+   create index.html 
+   create _site/stylesheets/app.css 
+
+Now you're awestruct!
+
+To generate and run your site in development mode, execute:
+
+  awestruct -d
+
+or, simply:
+
+  rake
+
+then visit your site at: http://localhost:4242
+
+Create file: /path/to/writeadapt/_config/site.yml
+Create file: /path/to/writeadapt/_layouts/base.html.haml
+Create file: /path/to/writeadapt/index.html.haml
+....
+
+.Website project file tree
+....
+.
+|-- .awestruct/
+|   `-- debug.log
+|-- .awestruct_ignore
+|-- _config/
+|   `-- site.yml
+|-- _ext/
+|   `-- pipeline.rb
+|-- Gemfile
+|-- humans.txt
+|-- index.html.haml
+|-- javascripts/
+|   |-- foundation/
+|   |   |-- foundation.alerts.js
+|   |   |-- foundation.clearing.js
+|   |   |-- foundation.cookie.js
+|   |   |-- foundation.dropdown.js
+|   |   |-- foundation.forms.js
+|   |   |-- foundation.interchange.js
+|   |   |-- foundation.joyride.js
+|   |   |-- foundation.js
+|   |   |-- foundation.magellan.js
+|   |   |-- foundation.orbit.js
+|   |   |-- foundation.placeholder.js
+|   |   |-- foundation.reveal.js
+|   |   |-- foundation.section.js
+|   |   |-- foundation.tooltips.js
+|   |   `-- foundation.topbar.js
+|   `-- vendor/
+|       |-- custom.modernizr.js
+|       |-- jquery.js
+|       `-- zepto.js
+|-- _layouts/
+|   `-- base.html.haml
+|-- Rakefile
+|-- robots.txt
+|-- _site/
+`-- stylesheets/
+    |-- app.scss
+    |-- _normalize.scss
+    `-- _settings.scss
+....
+
+== Next: Install Rake and Bundler
+

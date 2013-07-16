@@ -1,0 +1,108 @@
+= Using Images and Videos
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Using source code in your site
+
+Tutorial 11
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Images
+
+=== Make a directory for images in the project root
+
+ $ mkdir images
+
+=== Download some example images into the images directory
+
+http://www.flickr.com/photos/oreillyconf/sets/72157630609904796[OSCON Photos]
+
+== Include an inline image in a post written in AsciiDoc
+
+[source,asciidoc]
+----
+image:oscon-mascot.jpg[role="thumb right"] I'm excited to be at OSCON 2013.
+I'm currently attending a workshop on collaborative documentation.
+We're learning about how to:
+
+- setup a static website with Awestruct
+- compose content in AsciiDoc
+- collaborate on content using git and GitHub
+- publish the website to GitHub Pages
+- and lots more!
+
+In fact, this website was launched during the workshop.
+----
+
+NOTE: The default images directory is +/images+.
+You don't have to include the images directory in the image path.
+Asciidoctor will automatically resolve the image relative to the images directory.
+This also allows you to change the location of the images directory (or URL) without needing to update your content.
+
+== Include a block image in a post written in AsciiDoc
+
+[source,asciidoc]
+----
+I can't wait to show my site to these GitHub guys.
+They'll be proud ;)
+
+[caption=""]
+.GitHub trainers, Matthew and Tim
+image::github-trainers.jpg[]
+----
+
+== Add +imagesdir+ attribute below document title to enable images in GitHub preview
+
+[source,asciidoc]
+:imagesdir: ../images
+
+== Conditional hack to get post title to show on GitHub
+
+[source,asciidoc]
+----
+ifndef::icons[]
+[float]
+= Docs Workshop at OSCON 2013
+endif::icons[]
+----
+
+== Videos
+
+== Include a video in a post written in AsciiDoc
+
+[source,asciidoc]
+----
+.Mozilla Firefox Manifesto
+[poster="http://www.mozilla.org/images/about/poster.jpg"]
+video::http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm[]
+----
+
+CAUTION: The video macro is somewhat limited at the moment.
+It can't yet handle YouTube videos.
+You could use a pass through block to insert HTML directly.
+
+== Next: Add Disqus Comments and Google Analytics
+

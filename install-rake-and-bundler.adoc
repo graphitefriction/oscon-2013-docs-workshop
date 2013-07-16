@@ -1,0 +1,112 @@
+= Install Rake and Bundler
+Dan Allen; Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+Previous: Setup a new website project with Awestruct
+
+Tutorial 3
+
+This tutorial...
+
+////
+sidebar in layout (and other layouts like on reuze.me)
+inserting gist
+sentence per line
+post excerpt and other types of "chunks" (chunked content)
+link to tutorial for pushing to github pages
+styles for posts listing page (headings too big)
+tip about not loading certain extensions when profile is development
+slides
+favicon
+git history at bottom of file
+docinfo or common include
+timezone handling
+author bio at bottom of post (see smashingmagazine or alistapart for example)
+////
+
+== Install Rake and Bundler Gems
+
+ $ gem install rake bundler
+
+.Console output
+....
+Fetching: rake-10.1.0.gem (100%)
+Successfully installed rake-10.1.0
+Fetching: bundler-1.3.5.gem (100%)
+Successfully installed bundler-1.3.5
+2 gems installed
+....
+
+== Ensure environment is setup correctly
+ $ rake setup
+
+== Generate and preview website
+
+ $ rake
+
+NOTE: The +rake+ command with no arguments is a shortcut for +rake preview+.
+
+.Console output
+....
+WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Using profile: development
+Generating site: http://localhost:4242
+[Listen warning]:
+The blocking parameter of Listen::Listener#start is deprecated.
+Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
+[2013-01-01 00:00:00] INFO  WEBrick 1.3.1
+[2013-01-01 00:00:00] INFO  ruby 2.0.0 (2013-05-14) [x86_64-linux]
+[2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start: pid=10485 port=4242
+....
+
+== Preview website
+
+Visit http://localhost:4242 in your web browser.
+
+// TODO insert screenshot
+
+== Halt the preview server
+
+kbd:[Ctrl+C]
+
+.Structure of generated site
+....
+_site/
+|-- humans.txt
+|-- index.html
+|-- javascripts/
+|   |-- foundation/
+|   |   |-- foundation.alerts.js
+|   |   |-- foundation.clearing.js
+|   |   |-- foundation.cookie.js
+|   |   |-- foundation.dropdown.js
+|   |   |-- foundation.forms.js
+|   |   |-- foundation.interchange.js
+|   |   |-- foundation.joyride.js
+|   |   |-- foundation.js
+|   |   |-- foundation.magellan.js
+|   |   |-- foundation.orbit.js
+|   |   |-- foundation.placeholder.js
+|   |   |-- foundation.reveal.js
+|   |   |-- foundation.section.js
+|   |   |-- foundation.tooltips.js
+|   |   `-- foundation.topbar.js
+|   `-- vendor/
+|       |-- custom.modernizr.js
+|       |-- jquery.js
+|       `-- zepto.js
+|-- robots.txt
+`-- stylesheets/
+    `-- app.css
+....
+
+== Next: Setup a git repository for your website project
