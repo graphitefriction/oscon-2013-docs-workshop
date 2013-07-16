@@ -50,3 +50,11 @@ Knowledge of HTML is essential. Some knowledge of git and Ruby is useful, though
 * Ruby 1.9 (or JRuby 1.7)
 * Git client
 * Text editor
+
+== Overview
+
+This workshop is broken down into several https://github.com/graphitefriction/oscon-2013-docs-workshop/blob/master/tutorial-order.adoc[Projects, Modules and Tutorials].
+
+
+
+
