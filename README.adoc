@@ -40,7 +40,7 @@ Conference Website::
 
 == Abstract
 
-To spread our message to broader audiences, we should focus more on documentation and less on e-mail.
+To spread our message to broader audiences, we should focus more on documentation (and less on e-mail).
 But producing documentation is hard.
 In this session, we'll explore an agile documentation workflow that makes writing documentation easier, publishing it online simpler and collaborating on it faster.
 
