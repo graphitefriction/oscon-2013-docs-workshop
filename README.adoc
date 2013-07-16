@@ -32,6 +32,11 @@ Conference Location::
 Conference Website::
   http://www.oscon.com/oscon2013[oscon.com]
 
+== Trainers
+
+* http://www.oscon.com/oscon2013/public/schedule/speaker/117513[Dan Allen]
+* http://www.oscon.com/oscon2013/public/schedule/speaker/142111[Sarah White]
+
 == Abstract
 
 To spread our message to broader audiences, we should focus more on documentation and less on e-mail.
