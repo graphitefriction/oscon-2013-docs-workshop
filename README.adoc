@@ -42,7 +42,7 @@ Conference Website::
 
 To spread our message to broader audiences, we should focus more on documentation (and less on e-mail).
 But producing documentation is hard.
-In this session, we'll explore an agile documentation workflow that makes writing documentation easier, publishing it online simpler and collaborating on it faster.
+In this workshop, we'll explore an agile documentation workflow that makes writing documentation easier, publishing it online simpler and collaborating on it faster.
 
 It starts with writing documentation in the same format we use to write e-mail, plain text embellished with subtle markup.
 That's the goal of lightweight markup languages such as AsciiDoc and Markdown.
