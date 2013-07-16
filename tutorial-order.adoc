@@ -38,7 +38,7 @@ Using a console and text editor, we'll learn how to install and setup the tools 
 
 With the built-in CSS grid system and styles, we'll launch a basic website baked by Awestruct
 
-. Install Awestruct
+. https://github.com/graphitefriction/oscon-2013-docs-workshop/blob/master/install-awestruct.adoc[Install Awestruct]
 . Setup a new website project with Awestruct
 . Install Rake and Bundler
 . Setup a git repository for your website project
