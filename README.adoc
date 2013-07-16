@@ -14,7 +14,7 @@ Materials and related resources for the OSCON 2013 Workshop: {session-uri}[Easie
 === Workshop
 
 [horizontal]
-Date:: Tuesday, July, 23, 2013
+Date:: Tuesday, July 23, 2013
 Time:: 1:30 PM
 Room:: D139/140
 More info:: http://www.oscon.com/oscon2013/public/schedule/detail/29335[Session page on oscon.com]
