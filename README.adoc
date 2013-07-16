@@ -70,7 +70,8 @@ Let's bake better documentation, together.
 
 == Tutorial requirements and instructions for attendees
 
-Knowledge of HTML is essential. Some knowledge of git and Ruby is useful, though a novice should be able to pick up the necessary training “on the job”.
+Knowledge of HTML is essential.
+Some knowledge of git and Ruby is useful, though a novice should be able to pick up the necessary training ``on the job''.
 
 * Laptop
 * http://github.com[GitHub account]
