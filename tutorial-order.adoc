@@ -145,7 +145,8 @@ You’ll learn how to add, tag, and categorize blog posts.
 * How do I propose a revision or new content?
 +
 *Sidebar:* Pull request primer
-* How do I send revisions to someone else's proposal?
+* How do I send revisions to someone else's proposal
+* "Fork and Edit this file" button
 
 == Project: Add Rich Content, Responsive Design Features and Interactive Functionality to Your Website
 
