@@ -8,6 +8,7 @@ ifndef::icons[]
 endif::icons[]
 
 The lesson plan and materials for the workshop {session-uri}[Easier Documentation, Simpler Websites And Faster Collaboration] to be presented at http://oscon.com[OSCON 2013].
+See http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview/[the announcement].
 
 == When and Where
 
@@ -18,8 +19,9 @@ Date:: Tuesday, July 23, 2013
 Time:: 1:30 - 5:00 PM (3h 30m)
 Room:: D139/140
 Category:: Tools & Techniques
-Announcement:: http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview/
-More info:: http://www.oscon.com/oscon2013/public/schedule/detail/29335[Session page on oscon.com]
+More info::
+  * http://www.oscon.com/oscon2013/public/schedule/detail/29335[Session page on oscon.com]
+  * http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview[Announcement on asciidoctor.org]
 
 === General
 
