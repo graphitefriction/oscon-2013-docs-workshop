@@ -7,7 +7,7 @@ ifndef::icons[]
 == OSCON 2013 Docs Workshop
 endif::icons[]
 
-Materials and related resources for the OSCON 2013 Workshop: {session-uri}[Easier Documentation, Simpler Websites And Faster Collaboration]
+The lesson plan and materials for the workshop {session-uri}[Easier Documentation, Simpler Websites And Faster Collaboration] to be presented at http://oscon.com[OSCON 2013].
 
 == When and Where
 
