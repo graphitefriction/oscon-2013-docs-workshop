@@ -18,6 +18,7 @@ Date:: Tuesday, July 23, 2013
 Time:: 1:30 - 5:00 PM (3h 30m)
 Room:: D139/140
 Category:: Tools & Techniques
+Announcement:: http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview/
 More info:: http://www.oscon.com/oscon2013/public/schedule/detail/29335[Session page on oscon.com]
 
 === General
