@@ -8,6 +8,7 @@ ifndef::icons[]
 endif::icons[]
 
 The lesson plan and materials for the workshop {session-uri}[Easier Documentation, Simpler Websites And Faster Collaboration] to be presented at http://oscon.com[OSCON 2013].
+
 See http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview/[the announcement].
 
 == When and Where
