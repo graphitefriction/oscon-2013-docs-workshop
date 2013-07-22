@@ -1,0 +1,45 @@
+= Setting Up Your Workstation
+Sarah White
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+In this tutorial, we will:
+
+. Setup a Terminal
+. Setup a Text editor
+
+== Linux RVM procedure
+
+
+== MacOSX RVM procedure
+
+https://rvm.io[RVM] is a Ruby installation and version manager.
+RVM works by installing Ruby inside your home directory and manages the environment variables to allow you to switch between the system-wide Ruby and any Ruby installed using RVM.
+
+To install RVM, you first need to install https://developer.apple.com/xcode[XCode].
+XCode is available on the Mac OS X Install DVD.
+After installing XCode, perform a software update (&#63743; &#9656; Software Update...).
+
+Install git, using either Homebrew (as described above) or the http://git-scm.com/download/mac[installer for Mac OS X].
+
+Install RVM along with the latest version of Ruby:
+
+ $ \curl -#L https://get.rvm.io | bash -s stable --autolibs=3 --ruby
+
+NOTE: RVM will download and build the Ruby language, install RubyGems along with several essential gems and configure your +PATH+ environment variable.
+
+Source your shell configuration (only necessary in the window you used to install RVM):
+
+ $ source $HOME/.bash_profile
+
+Remove your local Gem configuration, if you have one (or move it out of the way):
+
+ $ rm -f $HOME/.gemrc
+ 
+== Windows RVM procedure
+
