@@ -8,11 +8,17 @@ Dan Allen; Sarah White
 :icons: font
 :source-highlighter: coderay
 
-Tutorial 1
+In this tutorial, we will:
 
-This tutorial...
+. Install RVM
+. Setup a Ruby gemset
+. Install Awestruck
+. Check the version of Awestruct via the commandline
+
 
 ////
+On Mac the Termincal is under utilities
+
 sidebar in layout (and other layouts like on reuze.me)
 inserting gist
 sentence per line
@@ -28,17 +34,33 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
-== Install RVM (Linux and MacOSX)
+== Check Your Ruby version
+
+ ruby --version
+ 
+== Install RVM
+
+On Mac, you'll first need to install XCode from the MacApp store or the MacOS system CD
+
+If you're using Linux or MacOSX, open a Terminal window and type the following commands:
 
  $ curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+ 
+If you're using Windows, ...
 
-== Setup fresh Ruby gemset
+TIP: If you want to use Ruby 2.0, replace +1.9.3+ with +2.0.0+.
+
+== Setup a fresh Ruby gemset
+
+On the commandline, type:
 
  $ rvm use 1.9.3@writeadapt --create
 
-TIP: If you want to use Ruby 2.0, replace +1.9.3+ with +2.0.0+ in the previous two commands.
+TIP: If you want to use Ruby 2.0, replace +1.9.3+ with +2.0.0+.
 
 == Install Awestruct
+
+On the commandline, type:
 
  $ gem install awestruct
 
@@ -109,6 +131,8 @@ Successfully installed awestruct-0.5.2
 ....
 
 == Check version of Awestruct
+
+On the commandline, type:
 
  $ awestruct --version
 
