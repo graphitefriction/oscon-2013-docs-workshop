@@ -1,0 +1,215 @@
+= Convert Markdown page to AsciiDoc
+Dan Allen
+:before: source, markdown, title="Before"
+:after: source, asciidoc, title="After"
+
+== Formatting
+
+[{before}]
+----
+**bold**
+
+*italic*
+
+`literal`
+
+`_posts`
+----
+
+[{after}]
+----
+*bold*
+
+_italic_
+
++literal+ or `literal`
+
+[path]+_posts+
+----
+
+== Document header
+
+[{before}]
+----
+---
+layout: docs
+title: Writing posts
+prev_section: frontmatter
+next_section: pages
+permalink: /docs/posts/
+---
+----
+
+[{after}]
+----
+= Writing posts
+:awestruct-layout: base
+:showtitle:
+:prev_section: frontmatter
+:next_section: pages
+----
+
+== Section titles (optional)
+
+[{before}]
+----
+## The Posts Folder
+----
+
+[{after}]
+----
+== The Posts Folder
+----
+
+== Admonitions
+
+[{before}]
+----
+<div class="note">
+  <h5>ProTip™: Show line numbers</h5>
+  <p>
+    You can make code snippets include line-numbers by adding the word
+    <code>linenos</code> to the end of the opening highlight tag like this:
+    <code>{% raw %}{% highlight ruby linenos %}{% endraw %}</code>.
+  </p>
+</div>
+----
+
+[{after}]
+----
+[TIP, caption='ProTip(TM)']
+.Show line numbers
+You can make code snippets include line-numbers by adding the word
+`linenos` to the end of the opening highlight tag like this:
+`{% raw %}{% highlight ruby linenos %}{% endraw %}`.
+----
+
+== Links
+
+=== Relative links
+
+[{before}]
+----
+[directory structure](../structure)
+----
+
+[{after}]
+----
+link:../structure[directory structure]
+----
+
+=== File links
+
+[{before}]
+----
+[get the PDF]({% raw %}{{ site.url }}{% endraw %}/assets/mydoc.pdf)
+----
+
+[{after}]
+----
+link:{baseurl}/assets/mydoc.pdf[get the PDF]
+----
+
+NOTE: The location of `baseurl` must be set in the Awestruct configuration.
+
+=== External links
+
+[{before}]
+----
+[Markdown](http://daringfireball.net/projects/markdown/) or
+----
+
+[{after}]
+----
+http://daringfireball.net/projects/markdown[Markdown]
+----
+
+=== More examples
+
+[{before}]
+----
+As explained on the [directory structure](../structure) page, the `_posts`
+folder is where your blog posts will live. These files can be either
+[Markdown](http://daringfireball.net/projects/markdown/) or
+[Textile](http://textile.sitemonks.com/) formatted text files, and as long as
+they have [YAML front-matter](../frontmatter), they will be converted from their
+source format into an HTML page that is part of your static site.
+----
+
+[{after}]
+----
+As explained on the link:../structure[directory structure] page, the `_posts`
+folder is where your blog posts will live. These files can be either
+http://daringfireball.net/projects/markdown/[Markdown] or
+http://textile.sitemonks.com/[Textile] formatted text files, and as long as
+they have link:../frontmatter[YAML front-matter], they will be converted from
+their source format into an HTML page that is part of your static site.
+----
+
+== Images
+
+[{before}]
+----
+![My helpful screenshot]({% raw %}{{ site.url }}{% endraw %}/assets/screenshot.jpg)
+----
+
+[{after}]
+----
+image::screenshots.jpg[]
+----
+
+NOTE: The location of `imagesdir` must be set in the Awestruct configuration.
+
+== Smart quotes
+
+[{before}]
+----
+One of Jekyll’s best aspects is that it is “blog aware”.
+----
+
+[{after}]
+----
+One of Jekyll's best aspects is that it is ``blog aware''.
+----
+
+== Source code
+
+[{before}]
+----
+{% highlight bash %}
+YEAR-MONTH-DAY-title.MARKUP
+{% endhighlight %}
+----
+
+[{after}]
+----
+[source,bash]
+YEAR-MONTH-DAY-title.MARKUP
+----
+
+[{before}]
+----
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+----
+
+[{after}]
+----
+[source,ruby]
+--
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+--
+----
