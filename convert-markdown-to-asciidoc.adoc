@@ -98,6 +98,18 @@ You can make code snippets include line-numbers by adding the word
 link:../structure[directory structure]
 ----
 
+=== External links
+
+[{before}]
+----
+[Markdown](http://daringfireball.net/projects/markdown/) or
+----
+
+[{after}]
+----
+http://daringfireball.net/projects/markdown[Markdown]
+----
+
 === File links
 
 [{before}]
@@ -111,18 +123,6 @@ link:{baseurl}/assets/mydoc.pdf[get the PDF]
 ----
 
 NOTE: The location of `baseurl` must be set in the Awestruct configuration.
-
-=== External links
-
-[{before}]
-----
-[Markdown](http://daringfireball.net/projects/markdown/) or
-----
-
-[{after}]
-----
-http://daringfireball.net/projects/markdown[Markdown]
-----
 
 === More examples
 
