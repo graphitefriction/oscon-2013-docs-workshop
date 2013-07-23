@@ -37,6 +37,7 @@ asciidoctor:
   :safe: safe
   :attributes:
     site_name: WriteAdapt
+    base_url: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
