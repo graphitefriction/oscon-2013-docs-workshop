@@ -1,8 +1,8 @@
 = Convert a Markdown page to AsciiDoc
 Dan Allen
 // tag::content[]
-:before: source, markdown, title=Markdown
-:after: source, asciidoc, title=AsciiDoc
+:before: source,no-highlight,title=Markdown
+:after: source,asciidoc,title=AsciiDoc
 
 [.topic.source]
 == Formatting
@@ -69,7 +69,8 @@ permalink: /docs/writing-posts/
 [.topic.source]
 == Admonitions
 
-[{before}]
+[source,html]
+.HTML embedded in Markdown
 ----
 <div class="note">
   <h5>ProTip™: Show line numbers</h5>

@@ -44,7 +44,7 @@ gem 'asciidoctor', '>= 0.1.4.pre'
 
  $ bundle install
 
-[max-height=290]
+[max-height=305]
 .Console output
 ....
 Fetching gem metadata from https://rubygems.org/...

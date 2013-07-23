@@ -72,7 +72,7 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +rocket-panda-embedded+.
 
 [.topic.source]
-== Add extra styles needed by website layout
+== Add extra styles needed for website layout
 
 [source,css]
 .+stylesheets/app.scss+

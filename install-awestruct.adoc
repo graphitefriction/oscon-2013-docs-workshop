@@ -84,7 +84,7 @@ ifndef::backend-slides[On the commandline, type:]
 
 [.incremental]
 --
-[max-height=310]
+[max-height=305]
 .Console output
 ....
 Fetching: tilt-1.4.1.gem (100%)
