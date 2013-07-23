@@ -101,7 +101,7 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
       ~ content
 ----
 
-== Edit +index.html.haml+ to remove horizontal rule under page title and format site name
+== Edit +index.html.haml+ to remove the +%hr+ under page title and format the site name
 
 [source,haml]
 ----
