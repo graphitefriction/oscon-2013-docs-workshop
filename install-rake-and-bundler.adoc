@@ -83,7 +83,17 @@ Please use Listen::Adapter#start for a non-blocking listener and Listen::Listene
 Visit http://localhost:4242 in your web browser
 --
 
-// TODO insert screenshot
+== !
+
+[{caption-off}]
+.Desktop view
+image::new-awestruct-foundation-site-desktop.png[]
+
+== !
+
+[.relax-x.middle, {caption-off}]
+.Phone view
+image::new-awestruct-foundation-site-phone.png[]
 
 [.topic.source]
 == Halt the preview server
