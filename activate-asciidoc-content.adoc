@@ -85,7 +85,7 @@ asciidoctor:
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
-    icons: font 
+    icons: font
 
 == Create a page in AsciiDoc format, +about.adoc+
 
