@@ -30,21 +30,27 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
-== Make empty directory for website
+// tag::content[]
 
+[.topic.source]
+== Create a project folder and switch to it
+
+.Make empty project directory
  $ mkdir writeadapt
 
-== Switch to new directory
-
+.Switch to new directory
  $ cd writeadapt
 
-IMPORTANT: Don't forget to switch to the new directory or else the website will be generated in the wrong place.
+IMPORTANT: Don't forget to switch to the new directory or else the website will be generated in the wrong location.
 
-== Generate website structure seeded to use Foundation CSS framework
+[.topic.source]
+== Generate website structure
+
  $ awestruct -i -f foundation
 
-NOTE: The long hand version of the previous command is +awestruct --init --framework foundation+.
-
+[.incremental]
+--
+[max-height=305]
 .Console output
 ....
 WARNING: Missing required dependency to activate optional built-in extension minify.rb
@@ -69,18 +75,7 @@ directory javascripts/vendor/
    create robots.txt 
    create MIT-LICENSE.txt 
    create javascripts/foundation/foundation.orbit.js 
-   create javascripts/foundation/foundation.cookie.js 
-   create javascripts/foundation/foundation.clearing.js 
-   create javascripts/foundation/foundation.magellan.js 
-   create javascripts/foundation/foundation.section.js 
-   create javascripts/foundation/foundation.alerts.js 
-   create javascripts/foundation/foundation.topbar.js 
-   create javascripts/foundation/foundation.joyride.js 
-   create javascripts/foundation/foundation.interchange.js 
-   create javascripts/foundation/foundation.forms.js 
-   create javascripts/foundation/foundation.tooltips.js 
-   create javascripts/foundation/foundation.dropdown.js 
-   create javascripts/foundation/foundation.placeholder.js 
+   create javascripts/foundation/...
    create javascripts/foundation/foundation.reveal.js 
    create javascripts/vendor/custom.modernizr.js 
    create javascripts/vendor/jquery.js 
@@ -105,51 +100,45 @@ Create file: /path/to/writeadapt/_config/site.yml
 Create file: /path/to/writeadapt/_layouts/base.html.haml
 Create file: /path/to/writeadapt/index.html.haml
 ....
+--
 
-.Website project file tree
+[.topic.source]
+== Awestruct project file tree
+
 ....
-.
-|-- .awestruct/
-|   `-- debug.log
-|-- .awestruct_ignore
-|-- _config/
-|   `-- site.yml
-|-- _ext/
-|   `-- pipeline.rb
-|-- Gemfile
-|-- humans.txt
-|-- index.html.haml
-|-- javascripts/
-|   |-- foundation/
-|   |   |-- foundation.alerts.js
-|   |   |-- foundation.clearing.js
-|   |   |-- foundation.cookie.js
-|   |   |-- foundation.dropdown.js
-|   |   |-- foundation.forms.js
-|   |   |-- foundation.interchange.js
-|   |   |-- foundation.joyride.js
-|   |   |-- foundation.js
-|   |   |-- foundation.magellan.js
-|   |   |-- foundation.orbit.js
-|   |   |-- foundation.placeholder.js
-|   |   |-- foundation.reveal.js
-|   |   |-- foundation.section.js
-|   |   |-- foundation.tooltips.js
-|   |   `-- foundation.topbar.js
-|   `-- vendor/
-|       |-- custom.modernizr.js
-|       |-- jquery.js
-|       `-- zepto.js
-|-- _layouts/
-|   `-- base.html.haml
-|-- Rakefile
-|-- robots.txt
-|-- _site/
-`-- stylesheets/
-    |-- app.scss
-    |-- _normalize.scss
-    `-- _settings.scss
+ .awestruct/
+ `-- debug.log
+ .awestruct_ignore
+ _config/
+ `-- site.yml
+ _ext/
+ `-- pipeline.rb
+ Gemfile
+ humans.txt
+ index.html.haml
+ javascripts/
+ |-- foundation/
+ |   |-- foundation.alerts.js
+ |   |-- ...
+ |   |-- foundation.js
+ |   |-- ...
+ |   `-- foundation.topbar.js
+ `-- vendor/
+     |-- custom.modernizr.js
+     |-- jquery.js
+     `-- zepto.js
+ _layouts/
+ `-- base.html.haml
+ Rakefile
+ robots.txt
+ _site/
+ stylesheets/
+ |-- app.scss
+ |-- _normalize.scss
+ `-- _settings.scss
 ....
+
+// end::content[]
 
 == Next: Install Rake and Bundler
 

@@ -30,20 +30,28 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
-== Change values in +_config/site.yml+
+// tag::content[]
+
+[.topic.source]
+== Configure site identity
 
 [source,yaml]
+.+_config/site.yml+
 name: Write__Adapt__
 title: WriteAdapt - For People Who Love Content
 org: Strategy Media
 author: The Octocat
 author_url: https://github.com/octocat
 base_url: ''
+ctx_path: ''
 
-== Tweak a few settings by adding these lines to +_config/site.yml+
+[.topic.source]
+== Additional configuration to customize processor
 
 [source,yaml]
+.+_config/site.yml+
 ----
+# append
 interpolate: false #<1>
 haml:
   :ugly: true #<2>
@@ -51,11 +59,14 @@ haml:
 <1> Disables interpolation of Ruby variable expressions in content (e.g., `#{name}`)
 <2> Disables pretty printing (indentation) of HTML output
 
+[.topic.source]
 == Clean and preview site to see changes
 
  $ rake clean
  $ rake
 
-NOTE: The clean step is required since a change to the configuration file, +_config/site.yml+, does not force pages to be regenerated automatically.
+IMPORTANT: The clean step is required since a change to the configuration file, +_config/site.yml+, does not force pages to be regenerated automatically.
+
+// end::content[]
 
 == Next: Activate AsciiDoc content

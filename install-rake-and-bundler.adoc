@@ -30,10 +30,15 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
+// tag::content[]
+
+[.topic.source]
 == Install Rake and Bundler Gems
 
  $ gem install rake bundler
 
+[.incremental]
+--
 .Console output
 ....
 Fetching: rake-10.1.0.gem (100%)
@@ -42,16 +47,22 @@ Fetching: bundler-1.3.5.gem (100%)
 Successfully installed bundler-1.3.5
 2 gems installed
 ....
+--
 
+[.topic.source]
 == Ensure environment is setup correctly
+
  $ rake setup
 
+[.topic.source]
 == Generate and preview website
 
  $ rake
 
 NOTE: The +rake+ command with no arguments is a shortcut for +rake preview+.
 
+[.incremental]
+--
 .Console output
 ....
 WARNING: Missing required dependency to activate optional built-in extension minify.rb
@@ -68,17 +79,43 @@ Please use Listen::Adapter#start for a non-blocking listener and Listen::Listene
 [2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start: pid=10485 port=4242
 ....
 
-== Preview website
+[.follow-up]
+Visit http://localhost:4242 in your web browser
+--
 
-Visit http://localhost:4242 in your web browser.
+== !
 
-// TODO insert screenshot
+[{caption-off}]
+.Desktop view
+image::new-awestruct-foundation-site-desktop.png[]
 
+== !
+
+[.relax-x.middle, {caption-off}]
+.Phone view
+image::new-awestruct-foundation-site-phone.png[]
+
+[.topic.source]
 == Halt the preview server
 
+.Press key combo
+--
 kbd:[Ctrl+C]
+--
 
-.Structure of generated site
+[.incremental]
+--
+.Console output
+....
+...
+[2013-01-01 00:00:00] INFO  going to shutdown ...
+[2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start done.
+....
+--
+
+[.topic.source]
+== Structure of generated site
+
 ....
 _site/
 |-- humans.txt
@@ -86,19 +123,9 @@ _site/
 |-- javascripts/
 |   |-- foundation/
 |   |   |-- foundation.alerts.js
-|   |   |-- foundation.clearing.js
-|   |   |-- foundation.cookie.js
-|   |   |-- foundation.dropdown.js
-|   |   |-- foundation.forms.js
-|   |   |-- foundation.interchange.js
-|   |   |-- foundation.joyride.js
+|   |   |-- ...
 |   |   |-- foundation.js
-|   |   |-- foundation.magellan.js
-|   |   |-- foundation.orbit.js
-|   |   |-- foundation.placeholder.js
-|   |   |-- foundation.reveal.js
-|   |   |-- foundation.section.js
-|   |   |-- foundation.tooltips.js
+|   |   |-- ...
 |   |   `-- foundation.topbar.js
 |   `-- vendor/
 |       |-- custom.modernizr.js
@@ -108,5 +135,7 @@ _site/
 `-- stylesheets/
     `-- app.css
 ....
+
+// end::content[]
 
 == Next: Setup a git repository for your website project

@@ -1,0 +1,59 @@
+= Add sidebar and collaborate buttons
+Dan Allen
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+// tag::content[]
+
+[.topic.source]
+== Add sidebar to base layout
+
+[source%nowrap,haml,max-height=335]
+.+_layouts/base.html.haml+
+----
+  #content.row
+    .large-9.columns
+      =content
+    .large-3.columns
+      - if page.source_path.end_with? '.adoc'
+        - rel_path = page.relative_source_path
+        %h4 Collaborate!
+        %ul.button-group
+          %li
+            %a.small.button(href="#{site.edit_base_url}#{rel_path}")
+              Edit
+          %li
+            %a.small.secondary.button(href="#{site.raw_base_url}#{rel_path}")
+              Raw
+          %li
+            %a.small.secondary.button(href="#{site.log_base_url}#{rel_path}")
+              Log
+      %h4 Topics 
+      %ul.square
+        - site.posts_tags.each do |tag|
+          %li
+            %a(href="#{site.ctx_path}#{tag.primary_page.url}")=tag
+----
+
+[.topic.source]
+== Define collaborate URLs in site configuration
+
+[source,yaml]
+.+_config/site.yml+
+----
+edit_base_url: https://github.com/{username}/writeadapt-{username}/edit/master
+raw_base_url: https://github.com/{username}/writeadapt-{username}/raw/master
+log_base_url: https://github.com/{username}/writeadapt-{username}/commits/master
+----
+
+[.topic.source]
+== Clean and preview site to see changes
+
+ $ rake clean preview
+
+// end::content[]

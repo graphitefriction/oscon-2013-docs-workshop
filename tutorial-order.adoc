@@ -7,6 +7,24 @@ Sarah White
 :icons: font
 :source-highlighter: coderay
 
+ifndef::icons[]
+[float]
+= Module and Tutorial Order
+endif::icons[]
+
+High-level outline::
+* Big picture, goals and finish line (topic and the agenda)
+* intro to tools (AsciiDoc, Awestruct, git, GitHub)
+* setup Awestruct-based website repository and simple publish to GitHub Pages
+* content foundations
+** information architecture & readibility
+** activating AsciiDoc on their site
+* sample AsciiDoc page (e.g., about.adoc)
+* convert sample Markdown document from jekyllrb.com to AsciiDoc (e.g., pages.md and/or posts.md)
+* setup Awestruct posts extension
+* do collaboration (e.g., guest blog post, etc)
+* make static dynamic using jQuery & family, responsive grid, etc
+
 == Project: Build a Basic Website with a Static Website Generator
 
 Create a website hosted on GitHub Pages to use for reporting your experiences at OSCON.
@@ -127,7 +145,8 @@ You’ll learn how to add, tag, and categorize blog posts.
 * How do I propose a revision or new content?
 +
 *Sidebar:* Pull request primer
-* How do I send revisions to someone else's proposal?
+* How do I send revisions to someone else's proposal
+* "Fork and Edit this file" button
 
 == Project: Add Rich Content, Responsive Design Features and Interactive Functionality to Your Website
 

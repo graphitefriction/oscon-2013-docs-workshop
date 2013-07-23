@@ -1,0 +1,240 @@
+= Convert a Markdown page to AsciiDoc
+Dan Allen
+// tag::content[]
+:before: source,no-highlight,title=Markdown
+:after: source,asciidoc,title=AsciiDoc
+
+[.topic]
+== Sample files
+
+Download:: https://raw.github.com/mojombo/jekyll/master/site/docs/pages.md
+
+Save As:: docs/_creating-pages.md
+
+Download:: https://raw.github.com/mojombo/jekyll/master/site/docs/posts.md
+
+Save As:: docs/_writing-posts.md
+
+[.topic.source]
+== Formatting
+
+[{before}]
+----
+**bold**
+
+*italic*
+
+`literal`
+
+`_posts`
+----
+
+[{after}]
+----
+*bold*
+
+_italic_
+
++literal+ (or `literal`)
+
+[path]+_posts+
+----
+
+[.topic.source]
+== Document header
+
+[{before}]
+----
+---
+layout: docs
+title: Writing posts
+prev_section: defining-frontmatter
+next_section: creating-pages
+permalink: /docs/writing-posts/
+---
+----
+
+[{after}]
+----
+= Writing posts
+:awestruct-layout: base
+:showtitle:
+:prev_section: defining-frontmatter
+:next_section: creating-pages
+----
+// FIXME can we set the permalink (output path) in Awestruct?
+
+[.topic.source]
+== Section titles (optional)
+
+[{before}]
+----
+## The Posts Folder
+----
+
+[{after}]
+----
+== The Posts Folder
+----
+
+[.topic.source]
+== Admonitions
+
+[source,html]
+.HTML embedded in Markdown
+----
+<div class="note">
+  <h5>ProTip™: Show line numbers</h5>
+  <p>
+    You can make code snippets include line-numbers by adding the word
+    <code>linenos</code> to the end of the opening highlight tag like
+    this: <code>{% raw %}{% highlight ruby linenos %}{% endraw %}</code>
+  </p>
+</div>
+----
+
+[{after}]
+----
+[TIP, caption='ProTip(TM)']
+.Show line numbers
+You can make code snippets include line-numbers by adding the word
+`linenos` to the end of the opening highlight tag like this:
+`{% raw %}{% highlight ruby linenos %}{% endraw %}`
+----
+
+[.topic.source]
+== Relative links
+
+[{before}]
+----
+[directory structure](../structure)
+----
+
+[{after}]
+----
+link:../structure[directory structure]
+----
+
+[.topic.source]
+== External links
+
+[{before}]
+----
+[Markdown](http://daringfireball.net/projects/markdown/)
+----
+
+[{after}]
+----
+http://daringfireball.net/projects/markdown[Markdown]
+----
+
+[.topic.source]
+== File links
+
+[{before}]
+----
+[get the PDF]({% raw %}{{ site.url }}{% endraw %}/assets/mydoc.pdf)
+----
+
+[{after}]
+----
+link:{ctx_path}/assets/mydoc.pdf[get the PDF]
+----
+
+NOTE: The location of `ctx_path` must be set in the Awestruct configuration.
+
+[.topic.source]
+== Full example with links
+
+[{before}]
+----
+As explained on the [directory structure](../structure) page, the `_posts`
+folder is where your blog posts will live. These files can be either
+[Markdown](http://daringfireball.net/projects/markdown/) or
+[Textile](http://textile.sitemonks.com/) formatted text files, and as long as
+they have [YAML front-matter](../frontmatter), they will be converted from their
+source format into an HTML page that is part of your static site.
+----
+
+[{after}]
+----
+As explained on the link:../structure[directory structure] page, the `_posts`
+folder is where your blog posts will live. These files can be either
+http://daringfireball.net/projects/markdown/[Markdown] or
+http://textile.sitemonks.com/[Textile] formatted text files, and as long as
+they have link:../frontmatter[YAML front-matter], they will be converted from
+their source format into an HTML page that is part of your static site.
+----
+
+[.topic.source]
+== Images
+
+[{before}]
+----
+![Helpful screenshot]({% raw %}{{ site.url }}{% endraw %}/assets/screenshot.jpg)
+----
+
+[{after}]
+----
+image::screenshots.jpg[Helpful screenshot]
+----
+
+NOTE: The location of `imagesdir` must be set in the Awestruct configuration.
+
+[.topic.source]
+== Smart quotes
+
+[{before}]
+----
+One of Jekyll’s best aspects is that it is “blog aware”.
+----
+
+[{after}]
+----
+One of Jekyll's best aspects is that it is ``blog aware''.
+----
+
+[.topic.source]
+== Source code
+
+[{before}]
+----
+{% highlight bash %}
+YEAR-MONTH-DAY-title.MARKUP
+{% endhighlight %}
+----
+
+[{after}]
+----
+[source,bash]
+YEAR-MONTH-DAY-title.MARKUP
+----
+
+[.topic.source]
+== Source code with callouts
+
+[{before}]
+----
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to {|format| format.html # show.html.erb
+  }
+end
+{% endhighlight %}
+----
+
+[{after}]
+----
+[source,ruby]
+def show
+  @widget = Widget(params[:id])
+  respond_to {|format| format.html ##\<1>
+  }
+end
+
+<1> show.html.erb
+----
+// FIXME being forced to duplicate the # to prevent it from being dropped
+
+// end::content[]

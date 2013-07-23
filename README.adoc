@@ -1,49 +1,81 @@
-= Oscon-2013-docs-workshop
+= OSCON 2013 Docs Workshop
+Sarah White; Dan Allen
+:session-uri: http://www.oscon.com/oscon2013/public/schedule/detail/29335
 
-Materials and related resources for the OSCON 2013 Workshop: Easier Documentation, Simpler Websites And Faster Collaboration
+ifndef::icons[]
+[float]
+== OSCON 2013 Docs Workshop
+endif::icons[]
+
+The lesson plan and materials for the workshop {session-uri}[Easier Documentation, Simpler Websites And Faster Collaboration] to be presented at http://oscon.com[OSCON 2013].
+
+See http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview/[the announcement] on asciidoctor.org.
 
 == When and Where
 
 === Workshop
 
-* Date: July, 23, 2012
-* Time: 1:30 PM
-* Room: D139/140
-
-http://www.oscon.com/oscon2013/public/schedule/detail/29335[Workshop URL]
+[horizontal]
+Date:: Tuesday, July 23, 2013
+Time:: 1:30 - 5:00 PM (3h 30m)
+Room:: D139/140
+Category:: Tools & Techniques
+More info::
+  * http://www.oscon.com/oscon2013/public/schedule/detail/29335[Session page on oscon.com]
+  * http://asciidoctor.org/news/2013/07/16/oscon-2013-docs-workshop-preview[Announcement on asciidoctor.org]
 
 === General
 
-.Conference Dates
+Conference Dates::
+  July 22-26, 2013
 
-July 22-26, 2013
+Conference Location::
+  Oregon Convention Center +
+  777 NE Martin Luther King, Jr. Blvd., +
+  Portland, Oregon 972322
 
-.Conference Location
-Oregon Convention Center
-777 NE Martin Luther King, Jr. Blvd.,
-Portland, Oregon 972322
+Conference Website::
+  http://www.oscon.com/oscon2013[oscon.com]
 
-http://www.oscon.com/oscon2013[Conference URL]
+== Trainers
+
+* http://www.oscon.com/oscon2013/public/schedule/speaker/117513[Dan Allen]
+* http://www.oscon.com/oscon2013/public/schedule/speaker/142111[Sarah White]
 
 == Abstract
 
-To spread our message to broader audiences, we should focus more on documentation and less on e-mail. But producing documentation is hard. In this session, we’ll explore an agile documentation workflow that makes writing documentation easier, publishing it online simpler and collaborating on it faster.
+To spread our message to broader audiences, we should focus more on documentation (and less on e-mail).
+But producing documentation is hard.
+In this workshop, we'll explore an agile documentation workflow that makes writing documentation easier, publishing it online simpler and collaborating on it faster.
 
-It starts with writing documentation in the same format we use to write e-mail, plain text embellished with subtle markup. That’s the goal of lightweight markup languages such as AsciiDoc and Markdown. Their syntax feels natural and allows us to stay focused on the content. They also make the content easy to read and edit in raw form, yet can still be translated to HTML for presentation.
+It starts with writing documentation in the same format we use to write e-mail, plain text embellished with subtle markup.
+That's the goal of lightweight markup languages such as AsciiDoc and Markdown.
+Their syntax feels natural and allows us to stay focused on the content.
+They also make the content easy to read and edit in raw form, yet can still be translated to HTML for presentation.
 
-To pull the documentation together into a cohesive website, we’ll take a similar approach of using lightweight markup geared towards web publishing. We’ll leverage Haml or Slim for HTML, Bootstrap or Foundation for layouts and typography and Sass or Compass for custom styles. These languages have the added benefit of keeping the source DRY.
+To pull the documentation together into a cohesive website, we'll take a similar approach of using lightweight markup geared towards web publishing.
+We'll leverage Haml or Slim for HTML, Bootstrap or Foundation for layouts and typography and Sass or Compass for custom styles.
+These languages have the added benefit of keeping the source DRY.
 
-We’ll then use static site generators like Awestruct and Jekyll to build out a static website from these source files. Both tools provide an aggregate compiler to transform the lightweight markup into web content. They also provide both a development mode for previewing the site locally and a mechanism for publishing the website online.
+We'll then use static site generators like Awestruct and Jekyll to build out a static website from these source files.
+Both tools provide an aggregate compiler to transform the lightweight markup into web content.
+They also provide both a development mode for previewing the site locally and a mechanism for publishing the website online.
 
-The website produced may be static, but it doesn’t mean it’s stagnant. With the ever increasing capabilities of browsers, you can shift dynamic behavior to the client and bid farewell to server-side security concerns. It also means you can put more processing power into the authoring pipeline.
+The website produced may be static, but it doesn't mean it’s stagnant.
+With the ever increasing capabilities of browsers, you can shift dynamic behavior to the client and bid farewell to server-side security concerns.
+It also means you can put more processing power into the authoring pipeline.
 
-Finally, we’ll build and publish the website to GitHub pages using a single command, git push. That’s when the real fun starts. You can easily collaborate on the content using git through the use of pull requests and other collaboration tools on GitHub, the revision history safely tucked away in the git repository.
+Finally, we'll build and publish the website to GitHub pages using a single command, git push.
+That's when the real fun starts.
+You can easily collaborate on the content using git through the use of pull requests and other collaboration tools on GitHub, the revision history safely tucked away in the git repository.
 
-This documentation workflow makes documentation easier, building websites around it simpler and collaborating on the content and publishing it online faster than ever before. Let’s bake better documentation, together.
+This documentation workflow makes documentation easier, building websites around it simpler and collaborating on the content and publishing it online faster than ever before.
+Let's bake better documentation, together.
 
-TUTORIAL REQUIREMENTS AND INSTRUCTIONS FOR ATTENDEES
+== Tutorial requirements and instructions for attendees
 
-Knowledge of HTML is essential. Some knowledge of git and Ruby is useful, though a novice should be able to pick up the necessary training “on the job”.
+Knowledge of HTML is essential.
+Some knowledge of git and Ruby is useful, though a novice should be able to pick up the necessary training ``on the job''.
 
 * Laptop
 * http://github.com[GitHub account]
@@ -51,7 +83,7 @@ Knowledge of HTML is essential. Some knowledge of git and Ruby is useful, though
 * Git client
 * Text editor
 
-== Overview
+== Lessons
 
 This workshop is broken down into several https://github.com/graphitefriction/oscon-2013-docs-workshop/blob/master/tutorial-order.adoc[Projects, Modules and Tutorials].
 
