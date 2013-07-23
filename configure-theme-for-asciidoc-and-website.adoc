@@ -80,6 +80,8 @@ TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +r
 @import "foundation/components/buttons";
 @import "foundation/components/top-bar";
 @import "foundation/components/inline-lists";
+$pagination-link-unavailable-font-color: #e9e9e9;
+@import "foundation/components/pagination";
 
 $footer-bg: $body-font-color !default;
 $footer-font-color: invert($body-font-color) !default;
