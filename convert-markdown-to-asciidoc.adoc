@@ -1,4 +1,4 @@
-= Convert Markdown page to AsciiDoc
+= Convert a Markdown page to AsciiDoc
 Dan Allen
 // tag::content[]
 :before: source, markdown, title=Markdown
