@@ -65,7 +65,7 @@ end
         %img{:src=>"#{page.post.author_url || site.author_url}.png"}(width=24 height=24)
         =page.post.author || site.author
       on
-      %time.pubdate{:datetime=>page.post.date.strftime '%FT%T%:z'}=page.post.date.strftime '%B %e, %Y'
+      %time.pubdate{:datetime=>page.post.date.strftime('%FT%T%:z')}=page.post.date.strftime '%B %e, %Y'
   .post-body
     =page.post.content
 ----
@@ -84,7 +84,7 @@ layout: base
 
 [source,haml]
 ----
-- paginator = page.posts
+- paginator = page.paginator
 .pagination-centered
   %ul.pagination
     - if paginator.previous_page
