@@ -51,7 +51,7 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
 
-== Replace content of +stylesheets/app.scss+ to configure theme
+== Delete all content in +stylesheets/app.scss+, then populate it with the content below to configure the theme
 
 [source,css]
 ----
@@ -79,7 +79,7 @@ body > footer {
 }
 ----
 
-TIP: Alternative themes include +asciidoctor-embedded+ and +rocket-panda-embedded+.
+TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +rocket-panda-embedded+.
 
 == Add line at top of +_ext/pipeline.rb+ to load SASS functions for themes
 
