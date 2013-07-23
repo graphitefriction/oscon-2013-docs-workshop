@@ -1,0 +1,85 @@
+= Content: Write, Read and Chunk
+
+== !
+
+Write once, use anywhere and everywhere
+
+== !
+
+Read in the raw
+
+== !
+
+Chunk
+
+== Chunk vs The Blob
+
+chunkvsblob.png
+
+== The Blob
+
+blob_content.png
+
+== !
+
+blob_content.png
+
+== !
+
+Chunk and Clump
+
+== The Spreadsheet of Doom, Death, and Horror
+
+doom_sheet.png
+
+== !
+
+Break your content into types
+
+== !
+
+press release
+
+landing page blurb
+
+product description
+
+feature deep dives
+
+white papers
+
+case studies
+
+executive briefs
+
+brochures
+
+presentations
+
+speaker, staff, and team bios
+
+product reviews
+
+blog entries
+
+portfolio slideshows
+
+== !
+
+Clump similar content across your project
+
+== !
+
+attribute.png
+
+== Output
+
+Anyway you need it
+
+== Styles
+
+Anyway you like it
+
+== Collaborating
+
+
