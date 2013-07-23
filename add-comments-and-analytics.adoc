@@ -40,9 +40,11 @@ extension Awestruct::Extensions::Disqus.new
 === Edit +_config/site.yml+ to configure Disqus
 
 [source,yaml]
-disqus: writeadapt
+disqus: writeadapt-<username>
 disqus_generate_id: true
 disqus_developer: true
+
+// FIXME also add to production profile
 
 === Edit +_partials/post.html.haml+ to add Disqus comments
 

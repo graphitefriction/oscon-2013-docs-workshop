@@ -30,6 +30,9 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
+// tag::content[]
+
+[.topic.source]
 == Edit +_config/site.yml+ to configure AsciiDoc source highlighter
 
 [source,yaml]
@@ -46,18 +49,22 @@ asciidoctor:
     source-highlighter: coderay
     coderay-css: style
 
-== Add CodeRay gem, +coderay+, to +Gemfile+
+[.topic.source]
+== Add CodeRay gem to Gemfile
 
 [source,ruby]
+.+Gemfile+ (partial)
 ----
 gem 'coderay'
 ----
 
-== Update gems
+[.topic.source]
+== Install new gems
 
- $ bundle update
+ $ bundle install
 
-== Add some source code
+[.topic.source]
+== Add source code to page
 
 [source,asciidoc]
 ....
@@ -68,5 +75,7 @@ require 'asciidoctor'
 puts Asciidoctor.render('Write__Adapt__', :doctype => :inline)
 ----
 ....
+
+// end::content[]
 
 == Next: Using Images and Videos

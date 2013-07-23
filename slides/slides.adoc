@@ -98,6 +98,14 @@ Chunked content
 
 include::../chunked-content.adoc[tags=content]
 
+== !
+
+[.statement]
+{next-label} +
+Adding different types of content
+
+include::../using-source-code-in-website.adoc[tags=content]
+
 [.topic.ending, hrole="name"]
 == Dan Allen{nbsp}&middot;{nbsp}Sarah White
 

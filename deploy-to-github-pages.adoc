@@ -79,6 +79,16 @@ profiles:
 
  $ rake clean deploy
 
+////
+WARNING: Missing required dependency to activate optional built-in extension minify.rb
+  cannot load such file -- htmlcompressor
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Using profile: production
+Generating site: http://localhost:4242
+Deploying to github_pages
+////
+
 [.follow-up]
 View your website again at: +
 http://<username>.github.io/writeadapt-<username> +
