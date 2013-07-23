@@ -38,6 +38,7 @@ asciidoctor:
   :attributes:
     sitename: WriteAdapt
     base_url: ''
+    ctx_path: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''

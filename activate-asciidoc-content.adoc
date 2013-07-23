@@ -89,7 +89,8 @@ asciidoctor:
   :safe: safe
   :attributes:
     sitename: WriteAdapt
-    baseurl: ''
+    base_url: ''
+    ctx_path: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -129,7 +130,7 @@ endif::backend-slides[]
 ----
         %li.divider
           %li
-            %a{:href=>"#{site.base_url}/about.html"} About
+            %a{:href=>"#{site.ctx_path}/about.html"} About
 ----
 
 // TODO also add in footer

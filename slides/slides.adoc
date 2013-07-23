@@ -82,6 +82,22 @@ Activate posts extension
 
 include::../activate-posts-extension.adoc[tags=content]
 
+== !
+
+[.statement]
+{next-label} +
+Deploy to GitHub Pages
+
+include::../deploy-to-github-pages.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Chunked content
+
+include::../chunked-content.adoc[tags=content]
+
 [.topic.ending, hrole="name"]
 == Dan Allen{nbsp}&middot;{nbsp}Sarah White
 

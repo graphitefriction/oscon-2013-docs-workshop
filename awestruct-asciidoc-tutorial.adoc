@@ -251,6 +251,7 @@ org: Strategy Media
 author: The Octocat
 author_url: https://github.com/octocat
 base_url: ''
+ctx_path: ''
 
 .Tweak a few settings by adding these lines to +_config/site.yml+
 [source,yaml]
@@ -318,7 +319,8 @@ asciidoctor:
   :safe: safe
   :attributes:
     sitename: WriteAdapt
-    baseurl: ''
+    base_url: ''
+    ctx_path: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -348,7 +350,7 @@ Attribute names that begin with +awestruct-+ are passed to Awestruct as front-ma
 ----
         %li.divider
           %li
-            %a{:href=>"#{site.base_url}/about.html"} About
+            %a{:href=>"#{site.ctx_path}/about.html"} About
 ----
 
 // TODO also add in footer
@@ -435,7 +437,7 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
 ----
       %li.name
         %h1
-          %a(href="#{site.base_url}/")=Asciidoctor.render(site.name, :doctype => :inline)
+          %a(href="#{site.ctx_path}/")=Asciidoctor.render(site.name, :doctype => :inline)
 ----
 
 .Clean and preview site to see changes
@@ -471,7 +473,7 @@ end
 %article.post
   %header.post-head
     %h1.title
-      %a{:href=>page.post.url}=page.post.title
+      %a{:href=>"#{site.ctx_path}#{page.post.url}"}=page.post.title
     %h4
       %em by
       %a.author{:href=>page.post.author_url || site.author_url}
@@ -500,7 +502,7 @@ layout: base
   %ul.pagination
     - if paginator.previous_page
       %li.arrow
-        %a{:href=>paginator.previous_page.url}
+        %a{:href=>"#{site.ctx_path}#{paginator.previous_page.url}"}
           %i.icon-step-backward
     - else
       %li.arrow.unavailable
@@ -509,7 +511,7 @@ layout: base
     %li #{paginator.current_page_index + 1} of #{paginator.pages.size}
     - if paginator.next_page
       %li.arrow
-        %a{:href=>paginator.next_page.url}
+        %a{:href=>"#{site.ctx_path}#{paginator.next_page.url}"}
           %i.icon-step-forward
     - else
       %li.arrow.unavailable
@@ -550,7 +552,7 @@ TIP: The default layout for a post is +post+, so you don't have to specify it in
 .Add Atom feed to +_layouts/base.html.haml+
 [source,haml]
 ----
-%link{:rel=>'alternate', :type=>'application/atom+xml', :href=>"#{site.base_url}/feed.xml"}
+%link{:rel=>'alternate', :type=>'application/atom+xml', :href=>"#{site.ctx_path}/feed.xml"}
 ----
 
 .Clean and preview site to see changes
@@ -587,7 +589,7 @@ CAUTION: Relative links must now be prefixed with +../+ to escape from directory
 ----
         %li.divider
           %li
-            %a{:href=>"#{site.base_url}/about"} About
+            %a{:href=>"#{site.ctx_path}/about"} About
 ----
 
 .Clean and preview site to see changes
@@ -601,7 +603,8 @@ asciidoctor:
   :safe: safe
   :attributes:
     sitename: WriteAdapt
-    baseurl: ''
+    base_url: ''
+    ctx_path: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -759,7 +762,7 @@ google_analytics: UA-00000000-1
     - if page.listing
       %p=page.post.excerpt || summarize(html_to_text(page.post.content), 100)
       %p
-        %a.small.secondary.button{:href=>page.post.url} Read more...
+        %a.small.secondary.button{:href=>"#{site.ctx_path}#{page.post.url}"} Read more...
     - else
       =page.post.content
 ----

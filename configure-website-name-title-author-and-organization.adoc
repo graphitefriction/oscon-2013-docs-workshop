@@ -43,6 +43,7 @@ org: Strategy Media
 author: The Octocat
 author_url: https://github.com/octocat
 base_url: ''
+ctx_path: ''
 
 [.topic.source]
 == Additional configuration to customize processor

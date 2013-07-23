@@ -70,10 +70,11 @@ end
 .+_partials/post.html.haml+
 ----
 - author_url = page.post.author_url || site.author_url
+- post_url = "#{site.ctx_path}#{page.post.url}"
 %article.post
   %header.post-head
     %h1.title
-      %a{:href=>page.post.url}=page.post.title
+      %a{:href=>post_url}=page.post.title
     %h4
       %em by
       %a.author{:href=>author_url}
@@ -109,7 +110,7 @@ layout: base
   %ul.pagination
     - if paginator.previous_page
       %li.arrow
-        %a{:href=>paginator.previous_page.url}
+        %a{:href=>"#{site.ctx_path}#{paginator.previous_page.url}"}
           %i.icon-step-backward
     - else
       %li.arrow.unavailable
@@ -118,7 +119,7 @@ layout: base
     %li #{paginator.current_page_index + 1} of #{paginator.pages.size}
     - if paginator.next_page
       %li.arrow
-        %a{:href=>paginator.next_page.url}
+        %a{:href=>"#{site.ctx_path}#{paginator.next_page.url}"}
           %i.icon-step-forward
     - else
       %li.arrow.unavailable
@@ -170,7 +171,7 @@ TIP: The default layout for a post is +post+, so you don't have to specify it in
 ----
 %link{:rel=>'alternate',
       :type=>'application/atom+xml',
-      :href=>"#{site.base_url}/feed.xml"}
+      :href=>"#{site.ctx_path}/feed.xml"}
 ----
 
 [.topic.source]

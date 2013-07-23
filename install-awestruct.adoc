@@ -58,7 +58,7 @@ IMPORTANT: On Mac, you'll first need to install XCode from the MacApp store or t
  
 ifndef::backend-slides[If you're using Windows, ...]
 
-.Windows
+.Windows (https://github.com/vertiginous/pik[pik])
  > gem install pik
  > pik_install C:\bin
  > pik add C:\ruby\IronRuby-091\bin

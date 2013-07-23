@@ -1,0 +1,90 @@
+= Deploy website to GitHub Pages
+Dan Allen
+:experimental:
+:toc2:
+:sectanchors:
+:idprefix:
+:idseparator: -
+:icons: font
+:source-highlighter: coderay
+
+// tag::content[]
+
+[.topic.source]
+== Commit and push any outstanding changes
+
+ $ git commit . -m 'Enhancements'
+ $ git push origin master
+
+[.topic.source]
+== Create the publish branch, gh-pages
+
+ $ git checkout --orphan gh-pages
+ $ rm -rf *
+ $ rm -rf .awestruct* .sass-* .gitignore .gitmodules .ruby-* .nojekyll
+ $ git rm --cached *
+ $ echo "GitHub Pages placeholder" > index.html
+ $ git add index.html
+ $ git commit -m "Seed publish branch for GitHub Pages"
+
+//$ find -maxdepth 1 -not -regex "^\.\(/\.git\)?$" -exec rm -rf {} \;
+
+[.topic.source]
+== Push the publish branch
+
+ $ git push origin gh-pages
+
+NOTE: By pushing the *gh-pages* branch, you also activated GitHub Pages to publish your website.
+
+[.follow-up]
+View your website at:
+http://<username>.github.io/writeadapt-<username>/ =>
+
+[.topic.source]
+== Setup the Awestruct GitHub Pages deployer
+
+.Switch to the +master+ branch
+ $ git checkout master
+ $ git submodule update
+
+.Append to +_config/site.yml+
+[source,yaml]
+----
+profiles:
+  development:
+    deploy:
+      dummy:
+  production:
+    base_url: http://<username>.github.io/writeadapt-<username>
+    ctx_path: /writeadapt-<username>
+    asciidoctor:
+      :attributes:
+        base_url: http://<username>.github.io/writeadapt-<username>
+        ctx_path: /writeadapt-<username>
+        # necessary to set imagesdir to absolute path to prevent Awestruct from botching Atom feed
+        imagesdir: http://<username>.github.io/writeadapt-<username>/images
+    deploy:
+      host: github_pages
+      branch: gh-pages
+----
+
+[.topic.source]
+== Commit deployer configuration
+
+ $ git commit _config/site.yml -m "Add profile for GitHub Pages deployment"
+ $ git push origin master
+
+[.topic.source]
+== Deploy to GitHub Pages
+
+ $ rake clean deploy
+
+[.follow-up]
+View your website again at: +
+http://<username>.github.io/writeadapt-<username> +
+
+IMPORTANT: Your Awestruct-based website is now live, and available worldwide!
+
+// FIXME Broken post URLs when running under a context path is a known issue
+
+// end::content[]

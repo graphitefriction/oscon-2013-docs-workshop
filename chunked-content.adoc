@@ -30,7 +30,10 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
-== Post excerpt
+// tag::content[]
+
+[.topic.source]
+== Define excerpt for post
 
 [source,asciidoc]
 ----
@@ -40,16 +43,22 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 {excerpt}
 ----
 
+[.topic.source]
+== Use post excerpt
+
 [source,haml]
+.Revise +_partials/post.html.haml+
 ----
   .post-body
     - if page.listing
       %p=page.post.excerpt || summarize(html_to_text(page.post.content), 100)
       %p
-        %a.small.secondary.button{:href=>page.post.url} Read more...
+        %a.small.secondary.button{:href=>post_url} Read more...
     - else
       =page.post.content
 ----
+
+// end::content[]
 
 == Post image
 

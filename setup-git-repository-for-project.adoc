@@ -73,6 +73,11 @@ ifndef::backend-slides[After running this command, the the +.gitignore+ file sho
 --
 
 [.topic.source]
+== Disable Jekyll
+
+ $ touch .nojekyll
+
+[.topic.source]
 == Add all non-ignored files to the git repository
 
  $ git add .
@@ -80,13 +85,14 @@ ifndef::backend-slides[After running this command, the the +.gitignore+ file sho
 [.topic.source]
 == Commit the changes to make the snapshot
 
- $ git commit -m 'initial import'
+ $ git commit -m 'Initial import of website sources'
 
 .Console output
 ....
  30 files changed, 18757 insertions(+)
  create mode 100644 .awestruct_ignore
  create mode 100644 .gitignore
+ create mode 100644 .nojekyll
  create mode 100644 Gemfile
  create mode 100644 Rakefile
  create mode 100644 _config/site.yml
@@ -108,6 +114,19 @@ ifndef::backend-slides[After running this command, the the +.gitignore+ file sho
 
 TIP: Changes are now tracked by git.
 You can rollback at any time.
+
+[.topic]
+== Create repository on GitHub
+
+See https://help.github.com/articles/create-a-repo#make-a-new-repository-on-github[Make a new repository on GitHub] =>
+
+[.topic.source]
+== Connect git repository to GitHub remote
+
+ $ git remote add origin https://github.com/<username>/writeadapt-<username>
+ $ git push origin master
+
+IMPORTANT: Replace +<username>+ with your GitHub username.
 
 // end::content[]
 
