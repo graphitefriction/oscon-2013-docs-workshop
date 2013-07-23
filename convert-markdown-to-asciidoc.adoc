@@ -1,8 +1,10 @@
 = Convert Markdown page to AsciiDoc
 Dan Allen
-:before: source, markdown, title="Before"
-:after: source, asciidoc, title="After"
+// tag::content[]
+:before: source, markdown, title=Markdown
+:after: source, asciidoc, title=AsciiDoc
 
+[.topic.source]
 == Formatting
 
 [{before}]
@@ -22,11 +24,12 @@ Dan Allen
 
 _italic_
 
-+literal+ or `literal`
++literal+ (or `literal`)
 
 [path]+_posts+
 ----
 
+[.topic.source]
 == Document header
 
 [{before}]
@@ -34,9 +37,9 @@ _italic_
 ---
 layout: docs
 title: Writing posts
-prev_section: frontmatter
-next_section: pages
-permalink: /docs/posts/
+prev_section: defining-frontmatter
+next_section: creating-pages
+permalink: /docs/writing-posts/
 ---
 ----
 
@@ -45,10 +48,12 @@ permalink: /docs/posts/
 = Writing posts
 :awestruct-layout: base
 :showtitle:
-:prev_section: frontmatter
-:next_section: pages
+:prev_section: defining-frontmatter
+:next_section: creating-pages
 ----
+// FIXME can we set the permalink (output path) in Awestruct?
 
+[.topic.source]
 == Section titles (optional)
 
 [{before}]
@@ -61,6 +66,7 @@ permalink: /docs/posts/
 == The Posts Folder
 ----
 
+[.topic.source]
 == Admonitions
 
 [{before}]
@@ -69,8 +75,8 @@ permalink: /docs/posts/
   <h5>ProTip™: Show line numbers</h5>
   <p>
     You can make code snippets include line-numbers by adding the word
-    <code>linenos</code> to the end of the opening highlight tag like this:
-    <code>{% raw %}{% highlight ruby linenos %}{% endraw %}</code>.
+    <code>linenos</code> to the end of the opening highlight tag like
+    this: <code>{% raw %}{% highlight ruby linenos %}{% endraw %}</code>
   </p>
 </div>
 ----
@@ -81,12 +87,11 @@ permalink: /docs/posts/
 .Show line numbers
 You can make code snippets include line-numbers by adding the word
 `linenos` to the end of the opening highlight tag like this:
-`{% raw %}{% highlight ruby linenos %}{% endraw %}`.
+`{% raw %}{% highlight ruby linenos %}{% endraw %}`
 ----
 
-== Links
-
-=== Relative links
+[.topic.source]
+== Relative links
 
 [{before}]
 ----
@@ -98,11 +103,12 @@ You can make code snippets include line-numbers by adding the word
 link:../structure[directory structure]
 ----
 
-=== External links
+[.topic.source]
+== External links
 
 [{before}]
 ----
-[Markdown](http://daringfireball.net/projects/markdown/) or
+[Markdown](http://daringfireball.net/projects/markdown/)
 ----
 
 [{after}]
@@ -110,7 +116,8 @@ link:../structure[directory structure]
 http://daringfireball.net/projects/markdown[Markdown]
 ----
 
-=== File links
+[.topic.source]
+== File links
 
 [{before}]
 ----
@@ -124,7 +131,8 @@ link:{baseurl}/assets/mydoc.pdf[get the PDF]
 
 NOTE: The location of `baseurl` must be set in the Awestruct configuration.
 
-=== More examples
+[.topic.source]
+== Full example with links
 
 [{before}]
 ----
@@ -146,20 +154,22 @@ they have link:../frontmatter[YAML front-matter], they will be converted from
 their source format into an HTML page that is part of your static site.
 ----
 
+[.topic.source]
 == Images
 
 [{before}]
 ----
-![My helpful screenshot]({% raw %}{{ site.url }}{% endraw %}/assets/screenshot.jpg)
+![Helpful screenshot]({% raw %}{{ site.url }}{% endraw %}/assets/screenshot.jpg)
 ----
 
 [{after}]
 ----
-image::screenshots.jpg[]
+image::screenshots.jpg[Helpful screenshot]
 ----
 
 NOTE: The location of `imagesdir` must be set in the Awestruct configuration.
 
+[.topic.source]
 == Smart quotes
 
 [{before}]
@@ -172,6 +182,7 @@ One of Jekyll’s best aspects is that it is “blog aware”.
 One of Jekyll's best aspects is that it is ``blog aware''.
 ----
 
+[.topic.source]
 == Source code
 
 [{before}]
@@ -187,15 +198,16 @@ YEAR-MONTH-DAY-title.MARKUP
 YEAR-MONTH-DAY-title.MARKUP
 ----
 
+[.topic.source]
+== Source code with callouts
+
 [{before}]
 ----
 {% highlight ruby %}
 def show
   @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
+  respond_to {|format| format.html # show.html.erb
+  }
 end
 {% endhighlight %}
 ----
@@ -203,13 +215,14 @@ end
 [{after}]
 ----
 [source,ruby]
---
 def show
   @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
+  respond_to {|format| format.html ##\<1>
+  }
 end
---
+
+<1> show.html.erb
 ----
+// FIXME being forced to duplicate the # to prevent it from being dropped
+
+// end::content[]
