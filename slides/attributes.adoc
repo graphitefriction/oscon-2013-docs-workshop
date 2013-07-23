@@ -1,0 +1,16 @@
+:sectids!:
+:experimental:
+:icons: font
+:imagesdir: ../images
+:source-highlighter: highlightjs
+//:source-highlighter: coderay
+:language: no-highlight
+:macros-on: subs="macros"
+:caption-off: caption=""
+:title-off: title="", caption=""
+:dzslides-aspect: 16-9
+:dzslides-style: asciidoctor
+:dzslides-transition: fade
+:dzslides-fonts: family=Neuton:400,700,800,400italic|Cedarville+Cursive
+:dzslides-highlight: asciidoctor
+:next-label: pass:quotes,attributes[*Next* [icon-caret-right]'{zwsp}']

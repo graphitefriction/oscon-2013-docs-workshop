@@ -1,0 +1,90 @@
+= _Easier_ Documentation, _Simpler_ Websites & _Faster_ Collaboration
+Dan Allen <https://twitter.com/mojavelinux[@mojavelinux]>; Sarah White <https://twitter.com/carbonfray[@carbonfray]>
+include::attributes.adoc[]
+
+[.topic.intro]
+== Topic *intro*
+
+== !
+
+"Every minute an editor spends managing presentational tweaks is one they can’t spend on critical stories."
+-- Jeff Eaton
+
+== !
+
+[.statement]
+{next-label} +
+Install Awestruct
+
+include::../install-awestruct.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Setup a new Awestruct project
+
+include::../setup-new-website-project-with-awestruct.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Install Rake and Bundler
+
+include::../install-rake-and-bundler.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Setup Git repository for project
+
+include::../setup-git-repository-for-project.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Configure website metadata
+
+include::../configure-website-name-title-author-and-organization.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Activate AsciiDoc content
+
+include::../activate-asciidoc-content.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Configure theme for website and AsciiDoc content
+
+include::../configure-theme-for-asciidoc-and-website.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Convert a Markdown page to AsciiDoc
+
+include::../convert-markdown-to-asciidoc.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
+Activate posts extension
+
+include::../activate-posts-extension.adoc[tags=content]
+
+[.topic.ending, hrole="name"]
+== Dan Allen{nbsp}&middot;{nbsp}Sarah White
+
+[.footer]
+[icon-twitter]'{zwsp}' @mojavelinux
+[icon-twitter]'{zwsp}' @carbonfray
