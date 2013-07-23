@@ -30,48 +30,65 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
+// tag::content[]
+
+[.topic.source]
 == Clone Asciidoctor stylesheet factory as a submodule
 
  $ git submodule add -b embedded-stylesheets \
- https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git stylesheets/_themes
+ https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git \
+ stylesheets/_themes
 
 ////
 
+[.topic.source]
 == Switch to the stylesheets directory
 
  $ cd stylesheets
 
+[.topic.source]
 == Clone the Asciidoctor stylesheet factory repository
 
  $ git clone --branch embedded-stylesheets https://github.com/asciidoctor/asciidoctor-stylesheet-factory _themes
 
+[.topic.source]
 == Switch back to the project root
 
  $ cd ..
 ////
 
+[.topic.source]
+== Import theme into main stylesheet
 
-== Delete all content in +stylesheets/app.scss+, then populate it with the content below to configure the theme
+. Delete all content in +stylesheets/app.scss+
+. Populate the file with the content in the listing below
 
 [source,css]
+.+stylesheets/app.scss+
 ----
 @import "_themes/sass/foundation-embedded.scss";
+----
+
+TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +rocket-panda-embedded+.
+
+[.topic.source]
+== Add extra styles needed by website layout
+
+[source,css]
+.+stylesheets/app.scss+
+----
 @import "foundation/components/buttons";
 @import "foundation/components/top-bar";
 @import "foundation/components/inline-lists";
 
-// fall through defaults
 $footer-bg: $body-font-color !default;
 $footer-font-color: invert($body-font-color) !default;
-
 .top-bar a {
   text-decoration: none;
 }
-
 h1 em {
   letter-spacing: 1px;
 }
-
 body > footer {
   background: $footer-bg;
   padding: $panel-padding;
@@ -79,46 +96,56 @@ body > footer {
 }
 ----
 
-TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +rocket-panda-embedded+.
-
-== Add line at top of +_ext/pipeline.rb+ to load SASS functions for themes
+[.topic.source]
+== Load SASS functions for themes
 
 [source,ruby]
+.Add line to top of +_ext/pipeline.rb+
 require './stylesheets/_themes/lib/functions.rb'
 
+[.topic.source]
 == Remove unnecessary files
 
  $ rm stylesheets/{_normalize.scss,_settings.scss}
 
 IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
 
-== Edit +_layouts/base.html.haml+ to assign id to main content
+[.topic.source]
+== Assign id to main content
 
 [source,haml]
+.Edit +_layouts/base.html.haml+
 ----
   #content.row
     .large-12.columns
       ~ content
 ----
 
-== Edit +index.html.haml+ to remove the +%hr+ under page title and format the site name
+[.topic.source]
+== Revise main heading on home page
 
 [source,haml]
+.Edit +index.html.haml+
 ----
 .row
   .large-12.columns
     %h1 Welcome to #{Asciidoctor.render site.name, :doctype => :inline}!
 ----
 
-== Edit +_layouts/base.html.haml+ to format site name
+IMPORTANT: Make sure to remove the +%hr+ under the +%h1+.
+
+[.topic.source]
+== Format site name in nav bar
 
 [source,haml]
+.Edit +_layouts/base.html.haml+
 ----
       %li.name
         %h1
           %a(href="#{site.base_url}/")=Asciidoctor.render(site.name, :doctype => :inline)
 ----
 
+[.topic.source]
 == Clean and preview site to see changes
 
  $ rake clean preview
@@ -126,6 +153,8 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
 // TODO insert screenshot (shows larger h1 and lead paragraph)
 
 // TODO show what happens if awestruct-layout is not set
+
+// end::content[]
 
 == Next: Activate posts extension (blog, news, etc)
 

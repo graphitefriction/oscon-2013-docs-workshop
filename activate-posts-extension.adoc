@@ -30,49 +30,67 @@ timezone handling
 author bio at bottom of post (see smashingmagazine or alistapart for example)
 ////
 
+// tag::content[]
+
+[.topic.source]
 == Create the posts directory in the project root
 
  $ mkdir posts
 
-== Enable the Posts extensions and Partial helper in +_ext/pipeline.rb+
+[.topic.source]
+== Enable the Posts extensions and Partial helper
 
 [source,ruby]
+.+_ext/pipeline.rb+ (partial)
 ----
 Awestruct::Extensions::Pipeline.new do
+
   helper Awestruct::Extensions::Partial
 
   extension Awestruct::Extensions::Posts.new '/posts'
-  extension Awestruct::Extensions::Paginator.new :posts, '/index', :page_name => 'posts/page/', :per_page => 5
-  extension Awestruct::Extensions::Atomizer.new :posts, '/feed.xml', :num_entries => 10
+
+  extension Awestruct::Extensions::Paginator.new :posts, '/index',
+      :page_name => 'posts/page/', :per_page => 5
+
+  extension Awestruct::Extensions::Atomizer.new :posts, '/feed.xml',
+      :num_entries => 10
+
 end
 ----
 
-== Create a directory for partials (i.e., include files) in the project root
+[.topic.source]
+== Create a directory for partials in the project root
 
  $ mkdir _partials
 
-== Create a partial, +_partials/post.html.haml+, to layout the post
+[.topic.source]
+== Create a partial to layout a post
 
 [source,haml]
+.+_partials/post.html.haml+
 ----
+- author_url = page.post.author_url || site.author_url
 %article.post
   %header.post-head
     %h1.title
       %a{:href=>page.post.url}=page.post.title
     %h4
       %em by
-      %a.author{:href=>page.post.author_url || site.author_url}
-        %img{:src=>"#{page.post.author_url || site.author_url}.png"}(width=24 height=24)
+      %a.author{:href=>author_url}
+        %img{:src=>"#{author_url}.png"}(width=24 height=24)
         =page.post.author || site.author
       on
-      %time.pubdate{:datetime=>page.post.date.strftime('%FT%T%:z')}=page.post.date.strftime '%B %e, %Y'
+      %time.pubdate{:datetime=>page.post.date.strftime('%FT%T%:z')}
+        =page.post.date.strftime '%B %e, %Y'
   .post-body
     =page.post.content
 ----
 
-== Create the layout for a post, +_layout/post.html.haml+
+[.topic.source]
+== Create the base layout for a post
 
 [source,haml]
+.+_layout/post.html.haml+
 ----
 ---
 layout: base
@@ -80,9 +98,11 @@ layout: base
 =partial 'post.html.haml', :post => page
 ----
 
-== Create the layout for pagination, +_partials/pagination.html.haml+
+[.topic.source]
+== Create the layout for pagination
 
-[source,haml]
+[source,haml,max-height=335]
+.+_partials/pagination.html.haml+
 ----
 - paginator = page.paginator
 .pagination-centered
@@ -106,9 +126,11 @@ layout: base
           %i.icon-step-forward
 ----
 
-== Edit +index.html.haml+ to show all posts on front page
+[.topic.source]
+== Show all posts on front page
 
 [source,haml]
+.Edit +index.html.haml+
 ----
 ---
 layout: base
@@ -124,9 +146,11 @@ layout: base
     =partial 'pagination.html.haml', :paginator => page.posts
 ----
 
-== Create a post, +posts/docs-workshop-oscon-2013.adoc+
+[.topic.source]
+== Create a new post
 
 [source,asciidoc]
+.+posts/docs-workshop-oscon-2013.adoc+
 ----
 = Docs Workshop at OSCON 2013
 Author Name
@@ -138,24 +162,35 @@ Content of first post, reporting from OSCON!
 
 TIP: The default layout for a post is +post+, so you don't have to specify it in the AsciiDoc header.
 
-== Add Atom feed to +_layouts/base.html.haml+
+[.topic.source]
+== Add Atom feed site
 
 [source,haml]
+.Edit +_layouts/base.html.haml+
 ----
-%link{:rel=>'alternate', :type=>'application/atom+xml', :href=>"#{site.base_url}/feed.xml"}
+%link{:rel=>'alternate',
+      :type=>'application/atom+xml',
+      :href=>"#{site.base_url}/feed.xml"}
 ----
 
+[.topic.source]
 == Clean and preview site to see changes
 
  $ rake clean preview
 
-== Enable Tagger extension below Paginator in +_ext/pipeline.rb+
+[.topic.source]
+== Enable Tagger extension
 
 [source,ruby]
-extension Awestruct::Extensions::Tagger.new :posts, '/index', 'posts/tag', :per_page => 5
+.Add declaration _below_ Paginator in +_ext/pipeline.rb+
+extension Awestruct::Extensions::Tagger.new :posts, '/index',
+    'posts/tag', :per_page => 5
 
-== Add tag links to bottom of +_partials/post.html.haml+
+[.topic.source]
+== Add tag links below post
 
+[source,haml]
+.Append to +_partials/post.html.haml+
 ----
   %footer.post-footer
     - if page.post.tags
@@ -164,9 +199,11 @@ extension Awestruct::Extensions::Tagger.new :posts, '/index', 'posts/tag', :per_
         =" #{page.post.tag_links}"
 ----
 
+[.topic.source]
 == Clean and preview site to see changes
 
  $ rake clean preview
 
+// end::content[]
 
 == Next: Extensionless URLs

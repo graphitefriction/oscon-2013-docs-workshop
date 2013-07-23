@@ -36,7 +36,7 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 asciidoctor:
   :safe: safe
   :attributes:
-    site_name: WriteAdapt
+    sitename: WriteAdapt
     base_url: ''
     idprefix: ''
     idseparator: '-'

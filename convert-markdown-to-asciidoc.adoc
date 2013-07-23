@@ -126,10 +126,10 @@ http://daringfireball.net/projects/markdown[Markdown]
 
 [{after}]
 ----
-link:{baseurl}/assets/mydoc.pdf[get the PDF]
+link:{base_url}/assets/mydoc.pdf[get the PDF]
 ----
 
-NOTE: The location of `baseurl` must be set in the Awestruct configuration.
+NOTE: The location of `base_url` must be set in the Awestruct configuration.
 
 [.topic.source]
 == Full example with links

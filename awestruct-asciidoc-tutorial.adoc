@@ -317,7 +317,8 @@ Your bundle is updated!
 asciidoctor:
   :safe: safe
   :attributes:
-    site_name: WriteAdapt
+    sitename: WriteAdapt
+    baseurl: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
@@ -326,11 +327,11 @@ asciidoctor:
 .Create a page in AsciiDoc format, +about.adoc+
 [source,asciidoc]
 ----
-= About {site_name} <1>
+= About {sitename} <1>
 Your Name
 :awestruct-layout: base <2>
 
-{site_name} was founded by {author} during a conference workshop.
+{sitename} was founded by {author} during a conference workshop.
 It's quickly becoming much bigger than this humble beginning.
 
 This page is written in http://asciidoc.org[AsciiDoc].
@@ -599,7 +600,8 @@ CAUTION: Relative links must now be prefixed with +../+ to escape from directory
 asciidoctor:
   :safe: safe
   :attributes:
-    site_name: WriteAdapt
+    sitename: WriteAdapt
+    baseurl: ''
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
