@@ -78,7 +78,7 @@ end
     %h4
       %em by
       %a.author{:href=>author_url}
-        %img{:src=>"#{author_url}.png"}(width=24 height=24)
+        %img(src="#{author_url}.png" width=24 height=24)
         =page.post.author || site.author
       on
       %time.pubdate{:datetime=>page.post.date.strftime('%FT%T%:z')}
@@ -110,20 +110,20 @@ layout: base
   %ul.pagination
     - if paginator.previous_page
       %li.arrow
-        %a{:href=>"#{site.ctx_path}#{paginator.previous_page.url}"}
+        %a(href="#{site.ctx_path}#{paginator.previous_page.url}")
           %i.icon-step-backward
     - else
       %li.arrow.unavailable
-        %a{:href=>'#'}
+        %a(href='#')
           %i.icon-step-backward
     %li #{paginator.current_page_index + 1} of #{paginator.pages.size}
     - if paginator.next_page
       %li.arrow
-        %a{:href=>"#{site.ctx_path}#{paginator.next_page.url}"}
+        %a(href="#{site.ctx_path}#{paginator.next_page.url}")
           %i.icon-step-forward
     - else
       %li.arrow.unavailable
-        %a{:href=>'#'}
+        %a(href='#')
           %i.icon-step-forward
 ----
 
@@ -169,9 +169,9 @@ TIP: The default layout for a post is +post+, so you don't have to specify it in
 [source,haml]
 .Edit +_layouts/base.html.haml+
 ----
-%link{:rel=>'alternate',
-      :type=>'application/atom+xml',
-      :href=>"#{site.ctx_path}/feed.xml"}
+%link(rel='alternate'
+      type='application/atom+xml'
+      href="#{site.ctx_path}/feed.xml")
 ----
 
 [.topic.source]
@@ -195,9 +195,13 @@ extension Awestruct::Extensions::Tagger.new :posts, '/index',
 ----
   %footer.post-footer
     - if page.post.tags
-      .tags
+      .tags<
         %i.label.icon-tags
-        =" #{page.post.tag_links}"
+        -#=page.post.tag_links
+        - page.post.tags.each_with_index do |tag, idx|
+          - unless idx.zero?
+            =', '
+          %a{:href=>"#{site.ctx_path}#{tag.primary_page.url}"}=tag
 ----
 
 [.topic.source]

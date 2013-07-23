@@ -94,6 +94,14 @@ include::../deploy-to-github-pages.adoc[tags=content]
 
 [.statement]
 {next-label} +
+Encourage collaboration
+
+include::../add-sidebar-and-collaborate-buttons.adoc[tags=content]
+
+== !
+
+[.statement]
+{next-label} +
 Chunked content
 
 include::../chunked-content.adoc[tags=content]

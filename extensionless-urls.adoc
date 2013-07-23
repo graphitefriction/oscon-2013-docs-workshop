@@ -45,7 +45,7 @@ CAUTION: Relative links must now be prefixed with +../+ to escape from directory
 ----
         %li.divider
           %li
-            %a{:href=>"#{site.ctx_path}/about"} About
+            %a(href="#{site.ctx_path}/about") About
 ----
 
 == Clean and preview site to see changes

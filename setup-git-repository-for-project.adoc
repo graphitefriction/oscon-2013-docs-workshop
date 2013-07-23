@@ -102,7 +102,6 @@ ifndef::backend-slides[After running this command, the the +.gitignore+ file sho
  create mode 100644 index.html.haml
  create mode 100644 javascripts/foundation/foundation.alerts.js
  create mode 100644 javascripts/foundation/...
- create mode 100644 javascripts/foundation/foundation.topbar.js
  create mode 100644 javascripts/vendor/custom.modernizr.js
  create mode 100644 javascripts/vendor/jquery.js
  create mode 100644 javascripts/vendor/zepto.js
@@ -118,15 +117,19 @@ You can rollback at any time.
 [.topic]
 == Create repository on GitHub
 
-See https://help.github.com/articles/create-a-repo#make-a-new-repository-on-github[Make a new repository on GitHub] =>
+Owner:: $${username}$$
+Repository name:: writeadapt-$${username}$$
+Description (optional):: An Awestruct demo site
+More info::
+See https://help.github.com/articles/create-a-repo#make-a-new-repository-on-github[Make a new repository on GitHub]
 
 [.topic.source]
 == Connect git repository to GitHub remote
 
- $ git remote add origin https://github.com/<username>/writeadapt-<username>
+ $ git remote add origin https://github.com/{username}/writeadapt-{username}
  $ git push origin master
 
-IMPORTANT: Replace +<username>+ with your GitHub username.
+IMPORTANT: Replace `{username}` with your GitHub username.
 
 // end::content[]
 

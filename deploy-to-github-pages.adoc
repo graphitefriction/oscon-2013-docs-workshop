@@ -21,12 +21,13 @@ Dan Allen
 
  $ git checkout --orphan gh-pages
  $ rm -rf *
- $ rm -rf .awestruct* .sass-* .gitignore .gitmodules .ruby-* .nojekyll
+ $ rm -rf .awestruct* .sass-* .gitignore .gitmodules
  $ git rm --cached *
  $ echo "GitHub Pages placeholder" > index.html
  $ git add index.html
  $ git commit -m "Seed publish branch for GitHub Pages"
 
+// add .ruby-* exclude from this find command
 //$ find -maxdepth 1 -not -regex "^\.\(/\.git\)?$" -exec rm -rf {} \;
 
 [.topic.source]
@@ -38,7 +39,7 @@ NOTE: By pushing the *gh-pages* branch, you also activated GitHub Pages to publi
 
 [.follow-up]
 View your website at:
-http://<username>.github.io/writeadapt-<username>/ =>
+$$http://{username}.github.io/writeadapt-{username}/$$
 
 [.topic.source]
 == Setup the Awestruct GitHub Pages deployer
@@ -47,22 +48,22 @@ http://<username>.github.io/writeadapt-<username>/ =>
  $ git checkout master
  $ git submodule update
 
+[source,yaml,max-height=240]
 .Append to +_config/site.yml+
-[source,yaml]
 ----
 profiles:
   development:
     deploy:
       dummy:
   production:
-    base_url: http://<username>.github.io/writeadapt-<username>
-    ctx_path: /writeadapt-<username>
+    base_url: http://{username}.github.io/writeadapt-{username}
+    ctx_path: /writeadapt-{username}
     asciidoctor:
       :attributes:
-        base_url: http://<username>.github.io/writeadapt-<username>
-        ctx_path: /writeadapt-<username>
-        # necessary to set imagesdir to absolute path to prevent Awestruct from botching Atom feed
-        imagesdir: http://<username>.github.io/writeadapt-<username>/images
+        base_url: http://{username}.github.io/writeadapt-{username}
+        ctx_path: /writeadapt-{username}
+        # imagesdir must be absolute to work around Atom feed bug
+        imagesdir: http://{username}.github.io/writeadapt-{username}/images
     deploy:
       host: github_pages
       branch: gh-pages
@@ -91,7 +92,7 @@ Deploying to github_pages
 
 [.follow-up]
 View your website again at: +
-http://<username>.github.io/writeadapt-<username> +
+$$http://{username}.github.io/writeadapt-{username}$$
 
 IMPORTANT: Your Awestruct-based website is now live, and available worldwide!
 

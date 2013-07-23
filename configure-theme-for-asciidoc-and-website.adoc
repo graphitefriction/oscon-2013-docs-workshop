@@ -66,6 +66,7 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 [source,css]
 .+stylesheets/app.scss+
 ----
+$row-width: 72em;
 @import "_themes/sass/foundation-embedded.scss";
 ----
 
@@ -74,10 +75,11 @@ TIP: Alternative themes for the first line include +asciidoctor-embedded+ and +r
 [.topic.source]
 == Add extra styles needed for website layout
 
-[source,css]
+[source,css,max-height=335]
 .+stylesheets/app.scss+
 ----
 @import "foundation/components/buttons";
+@import "foundation/components/button-groups";
 @import "foundation/components/top-bar";
 @import "foundation/components/inline-lists";
 $pagination-link-unavailable-font-color: #e9e9e9;
@@ -120,7 +122,7 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
 ----
   #content.row
     .large-12.columns
-      ~ content
+      =content
 ----
 
 [.topic.source]
@@ -144,7 +146,8 @@ IMPORTANT: Make sure to remove the +%hr+ under the +%h1+.
 ----
       %li.name
         %h1
-          %a(href="#{site.ctx_path}/")=Asciidoctor.render(site.name, :doctype => :inline)
+          %a(href="#{site.ctx_path}/")
+            =Asciidoctor.render(site.name, :doctype => :inline)
 ----
 
 [.topic.source]

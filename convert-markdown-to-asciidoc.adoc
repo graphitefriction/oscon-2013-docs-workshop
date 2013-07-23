@@ -4,6 +4,17 @@ Dan Allen
 :before: source,no-highlight,title=Markdown
 :after: source,asciidoc,title=AsciiDoc
 
+[.topic]
+== Sample files
+
+Download:: https://raw.github.com/mojombo/jekyll/master/site/docs/pages.md
+
+Save As:: docs/_creating-pages.md
+
+Download:: https://raw.github.com/mojombo/jekyll/master/site/docs/posts.md
+
+Save As:: docs/_writing-posts.md
+
 [.topic.source]
 == Formatting
 

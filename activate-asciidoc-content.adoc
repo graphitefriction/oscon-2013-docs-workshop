@@ -130,7 +130,7 @@ endif::backend-slides[]
 ----
         %li.divider
           %li
-            %a{:href=>"#{site.ctx_path}/about.html"} About
+            %a(href="#{site.ctx_path}/about.html") About
 ----
 
 // TODO also add in footer
