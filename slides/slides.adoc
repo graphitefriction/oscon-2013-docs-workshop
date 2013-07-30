@@ -2,13 +2,19 @@
 Dan Allen <https://twitter.com/mojavelinux[@mojavelinux]>; Sarah White <https://twitter.com/carbonfray[@carbonfray]>
 include::attributes.adoc[]
 
-[.topic.intro]
-== Topic *intro*
-
 == !
 
 "Every minute an editor spends managing presentational tweaks is one they can’t spend on critical stories."
 -- Jeff Eaton
+
+[.topic.intro]
+== *Build* your site
+
+== !
+
+[.statement]
+*Automate!*
+Everything you type in a terminal is eventually a task you don't have to do
 
 == !
 
@@ -50,6 +56,14 @@ Configure website metadata
 
 include::../configure-website-name-title-author-and-organization.adoc[tags=content]
 
+[.topic.intro]
+== Write in *plain text*
+
+== !
+
+"I do not believe that on-page, in-context editing should be the primary edit mode of a CMS."
+-- Deane Barker
+
 == !
 
 [.statement]
@@ -82,6 +96,9 @@ Activate posts extension
 
 include::../activate-posts-extension.adoc[tags=content]
 
+[.topic.intro]
+== *Publish* your site
+
 == !
 
 [.statement]
@@ -90,19 +107,16 @@ Deploy to GitHub Pages
 
 include::../deploy-to-github-pages.adoc[tags=content]
 
-== !
+[.topic.intro]
+== *Content* Write, Read and Chunk
 
-[.statement]
-{next-label} +
-Encourage collaboration
-
-include::../add-sidebar-and-collaborate-buttons.adoc[tags=content]
+include::../content.adoc[tags=content]
 
 == !
 
 [.statement]
 {next-label} +
-Chunked content
+Chunk some content
 
 include::../chunked-content.adoc[tags=content]
 
@@ -113,6 +127,17 @@ include::../chunked-content.adoc[tags=content]
 Adding different types of content
 
 include::../using-source-code-in-website.adoc[tags=content]
+
+[.topic.intro]
+== *Write* content together
+
+== !
+
+[.statement]
+{next-label} +
+Encourage collaboration
+
+include::../add-sidebar-and-collaborate-buttons.adoc[tags=content]
 
 [.topic.ending, hrole="name"]
 == Dan Allen{nbsp}&middot;{nbsp}Sarah White
