@@ -53,8 +53,7 @@ $$http://{username}.github.io/writeadapt-{username}/$$
 ----
 profiles:
   development:
-    deploy:
-      dummy:
+    deploy: nil #<1>
   production:
     base_url: http://{username}.github.io/writeadapt-{username}
     ctx_path: /writeadapt-{username}
@@ -62,12 +61,15 @@ profiles:
       :attributes:
         base_url: http://{username}.github.io/writeadapt-{username}
         ctx_path: /writeadapt-{username}
-        # imagesdir must be absolute to work around Atom feed bug
-        imagesdir: http://{username}.github.io/writeadapt-{username}/images
+        imagesdir: http://{username}.github.io/writeadapt-{username}/images #<2>
     deploy:
       host: github_pages
       branch: gh-pages
 ----
+<1> add nil deploy config to force development as default profile
+<2> imagesdir must be absolute to work around Atom feed bug
+
+IMPORTANT: Replace `{username}` with your GitHub username.
 
 [.topic.source]
 == Commit deployer configuration
