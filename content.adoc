@@ -1,85 +1,86 @@
 = Content: Write, Read and Chunk
 
-== !
-
-Write once, use anywhere and everywhere
+// tag::content[]
 
 == !
 
-Read in the raw
+[.statement]
+Write once, use *anywhere* and *everywhere*
 
 == !
 
-Chunk
+[.statement]
+Read in the *raw*
+
+== !
+
+[.statement]
+Write the *chunk*
 
 == Chunk vs The Blob
 
-chunkvsblob.png
+[{title-off}]
+image::chunkvsblob.png[]
 
 == The Blob
 
-blob_content.png
+[.invert, {caption-off}]
+.Your content in HTML
+image::blob_content.png[]
 
 == !
 
-blob_content.png
-
-== !
-
-Chunk and Clump
+[.statement]
+*Chunk* and *Clump*
 
 == The Spreadsheet of Doom, Death, and Horror
 
-doom_sheet.png
+[.relax-y, {title-off}]
+image::doom_sheet.png[]
 
 == !
 
-Break your content into types
+[.statement]
+Break your *content* into *types*
 
 == !
 
-press release
-
-landing page blurb
-
-product description
-
-feature deep dives
-
-white papers
-
-case studies
-
-executive briefs
-
-brochures
-
-presentations
-
-speaker, staff, and team bios
-
-product reviews
-
-blog entries
-
-portfolio slideshows
+[.scatter]
+* press release
+* landing page blurb
+* product description
+* feature deep dives
+* white papers
+* case studies
+* executive briefs
+* brochures
+* presentations
+* speaker, staff, and team bios
+* product reviews
+* blog entries
+* portfolio slideshows
 
 == !
 
-Clump similar content across your project
+[.statement]
+*Clump* similar *content* across your project
 
 == !
 
-attribute.png
+[{title-off}]
+image::attribute.png[]
 
-== Output
+== !
 
-Anyway you need it
+[.statement]
+*Output* anyway you *need it*
 
-== Styles
+== !
 
-Anyway you like it
+[.statement]
+*Style* anyway you *like it*
+
+// end::content[]
 
 == Collaborating
-
 
