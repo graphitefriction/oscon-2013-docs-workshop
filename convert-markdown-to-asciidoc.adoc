@@ -77,6 +77,16 @@ permalink: /docs/writing-posts/
 == The Posts Folder
 ----
 
+== !
+
+"Common article elements such as call-out warnings...were too complex for the WYSIWYG editor."
+-- Jeff Eaton
+
+== !
+
+"[E]ditors tried to duplicate the precise markup. [O]thers tried to duplicate the appearance with the WYSIWYG editor's tools."
+-- Jeff Eaton
+
 [.topic.source]
 == Admonitions
 
