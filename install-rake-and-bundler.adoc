@@ -32,6 +32,38 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 
 // tag::content[]
 
+////
+[.topic.source]
+== Install Bundler
+
+ $ gem install bundler
+
+[.incremental]
+--
+.Console output
+....
+Fetching: bundler-1.3.5.gem (100%)
+Successfully installed bundler-1.3.5
+1 gem installed
+....
+--
+
+[.topic.source]
+== Install Extra Dependencies
+
+ $ rm -f Gemfile.lock
+ $ bundle install
+
+.Console output
+....
+Fetching gem metadata from https://rubygems.org/...
+Resolving dependencies...
+Installing rake (10.1.0) 
+Using asciidoctor (0.1.4) 
+Using sass (3.2.12)
+...
+....
+
 [.topic.source]
 == Install Rake and Bundler Gems
 
@@ -54,29 +86,31 @@ Successfully installed bundler-1.3.5
 
  $ rake setup
 
+////
+
 [.topic.source]
 == Generate and preview website
 
  $ rake
 
-NOTE: The +rake+ command with no arguments is a shortcut for +rake preview+.
+NOTE: The no-argument +rake+ command is a alias for +rake preview+.
 
 [.incremental]
 --
 .Console output
 ....
-WARNING: Missing required dependency to activate optional built-in extension minify.rb
-  cannot load such file -- htmlcompressor
-WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
-  cannot load such file -- coffee-script
+Running command: bundle exec awestruct -d
 Using profile: development
 Generating site: http://localhost:4242
+***************************************************************************
+Starting preview server at http://localhost:4242 (Press Ctrl-C to shutdown)
+***************************************************************************
 [Listen warning]:
 The blocking parameter of Listen::Listener#start is deprecated.
 Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
-[2013-01-01 00:00:00] INFO  WEBrick 1.3.1
-[2013-01-01 00:00:00] INFO  ruby 2.0.0 (2013-05-14) [x86_64-linux]
-[2013-01-01 00:00:00] INFO  WEBrick::HTTPServer#start: pid=10485 port=4242
+[2013-12-03 17:20:43] INFO  WEBrick 1.3.1
+[2013-12-03 17:20:43] INFO  ruby 2.0.0 (2013-11-22) [x86_64-linux]
+[2013-12-03 17:20:43] INFO  WEBrick::HTTPServer#start: pid=19591 port=4242
 ....
 
 [.follow-up]
@@ -92,7 +126,7 @@ image::new-awestruct-foundation-site-desktop.png[]
 == !
 
 [.relax-x.middle, {caption-off}]
-.Phone view
+.Mobile view
 image::new-awestruct-foundation-site-phone.png[]
 
 [.topic.source]

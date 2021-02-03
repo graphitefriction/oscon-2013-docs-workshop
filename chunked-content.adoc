@@ -38,7 +38,7 @@ author bio at bottom of post (see smashingmagazine or alistapart for example)
 [source,asciidoc]
 ----
 :excerpt: Excerpt of post.
-:awestruct-excerpt: {excerpt}
+:page-excerpt: {excerpt}
 
 {excerpt}
 ----

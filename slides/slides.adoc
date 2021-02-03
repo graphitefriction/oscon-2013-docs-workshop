@@ -1,5 +1,7 @@
 = _Easier_ Documentation, _Simpler_ Websites & _Faster_ Collaboration
-Dan Allen <https://twitter.com/mojavelinux[@mojavelinux]>; Sarah White <https://twitter.com/carbonfray[@carbonfray]>
+//Dan Allen <https://twitter.com/mojavelinux[@mojavelinux]>; Sarah White <https://twitter.com/carbonfray[@carbonfray]>
+Dan Allen <https://twitter.com/mojavelinux[@mojavelinux]>
+:hashtag: #rwx #asciidoctor
 include::attributes.adoc[]
 
 == !
@@ -13,8 +15,8 @@ include::attributes.adoc[]
 == !
 
 [.statement]
-*Automate!*
-Everything you type in a terminal is eventually a task you don't have to do
+*Automate!* +
+A command typed in a terminal is a task automated.
 
 == !
 
@@ -32,11 +34,21 @@ Setup a new Awestruct project
 
 include::../setup-new-website-project-with-awestruct.adoc[tags=content]
 
+////
 == !
 
 [.statement]
 {next-label} +
 Install Rake and Bundler
+
+include::../install-rake-and-bundler.adoc[tags=content]
+////
+
+== !
+
+[.statement]
+{next-label} +
+Preview Site
 
 include::../install-rake-and-bundler.adoc[tags=content]
 
@@ -72,6 +84,7 @@ Activate AsciiDoc content
 
 include::../activate-asciidoc-content.adoc[tags=content]
 
+////
 == !
 
 [.statement]
@@ -79,15 +92,9 @@ include::../activate-asciidoc-content.adoc[tags=content]
 Configure theme for website and AsciiDoc content
 
 include::../configure-theme-for-asciidoc-and-website.adoc[tags=content]
+////
 
-== !
-
-[.statement]
-{next-label} +
-Convert a Markdown page to AsciiDoc
-
-include::../convert-markdown-to-asciidoc.adoc[tags=content]
-
+////
 == !
 
 [.statement]
@@ -95,6 +102,7 @@ include::../convert-markdown-to-asciidoc.adoc[tags=content]
 Activate posts extension
 
 include::../activate-posts-extension.adoc[tags=content]
+////
 
 [.topic.intro]
 == *Publish* your site
@@ -124,7 +132,8 @@ include::../chunked-content.adoc[tags=content]
 
 [.statement]
 {next-label} +
-Adding different types of content
+//Adding different types of content
+Adding source code to your site
 
 include::../using-source-code-in-website.adoc[tags=content]
 
@@ -139,9 +148,17 @@ Encourage collaboration
 
 include::../add-sidebar-and-collaborate-buttons.adoc[tags=content]
 
+////
 [.topic.ending, hrole="name"]
 == Dan Allen{nbsp}&middot;{nbsp}Sarah White
 
 [.footer]
 [icon-twitter]'{zwsp}' @mojavelinux
 [icon-twitter]'{zwsp}' @carbonfray
+////
+
+[.topic.ending, hrole=name]
+== Publish Like a Hacker!
+
+[.footer]
+Dan Allen [icon-twitter]'{zwsp}' @mojavelinux

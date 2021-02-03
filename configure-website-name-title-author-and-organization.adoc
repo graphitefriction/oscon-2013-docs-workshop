@@ -62,8 +62,7 @@ haml:
 [.topic.source]
 == Clean and preview site to see changes
 
- $ rake clean
- $ rake
+ $ rake clean preview
 
 IMPORTANT: The clean step is required since a change to the configuration file, +_config/site.yml+, does not force pages to be regenerated automatically.
 

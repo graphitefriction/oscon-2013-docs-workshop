@@ -53,18 +53,14 @@ IMPORTANT: Don't forget to switch to the new directory or else the website will 
 [max-height=305]
 .Console output
 ....
-WARNING: Missing required dependency to activate optional built-in extension minify.rb
-  cannot load such file -- htmlcompressor
-WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
-  cannot load such file -- coffee-script
-Create directory: /path/to/writeadapt/_config
-Create directory: /path/to/writeadapt/_layouts
-Create directory: /path/to/writeadapt/_ext
-Create file: /path/to/writeadapt/_ext/pipeline.rb
-Create file: /path/to/writeadapt/.awestruct_ignore
-Create file: /path/to/writeadapt/Rakefile
-Create file: /path/to/writeadapt/Gemfile
-Create directory: /path/to/writeadapt/stylesheets
+Create directory: /home/dallen/tmp/awestruct/writeadapt/_config
+Create directory: /home/dallen/tmp/awestruct/writeadapt/_layouts
+Create directory: /home/dallen/tmp/awestruct/writeadapt/_ext
+Create file: /home/dallen/tmp/awestruct/writeadapt/_ext/pipeline.rb
+Create file: /home/dallen/tmp/awestruct/writeadapt/.awestruct_ignore
+Create file: /home/dallen/tmp/awestruct/writeadapt/Rakefile
+Create file: /home/dallen/tmp/awestruct/writeadapt/Gemfile
+Create directory: /home/dallen/tmp/awestruct/writeadapt/stylesheets
 directory _site/stylesheets/ 
 directory javascripts/foundation/ 
 directory javascripts/vendor/ 
@@ -75,13 +71,35 @@ directory javascripts/vendor/
    create robots.txt 
    create MIT-LICENSE.txt 
    create javascripts/foundation/foundation.orbit.js 
-   create javascripts/foundation/...
+   create javascripts/foundation/foundation.cookie.js 
+   create javascripts/foundation/foundation.clearing.js 
+   create javascripts/foundation/foundation.magellan.js 
+   create javascripts/foundation/foundation.section.js 
+   create javascripts/foundation/foundation.alerts.js 
+   create javascripts/foundation/foundation.topbar.js 
+   create javascripts/foundation/foundation.joyride.js 
+   create javascripts/foundation/foundation.interchange.js 
+   create javascripts/foundation/foundation.forms.js 
+   create javascripts/foundation/foundation.tooltips.js 
+   create javascripts/foundation/foundation.abide.js 
+   create javascripts/foundation/foundation.dropdown.js 
+   create javascripts/foundation/foundation.placeholder.js 
    create javascripts/foundation/foundation.reveal.js 
    create javascripts/vendor/custom.modernizr.js 
    create javascripts/vendor/jquery.js 
    create javascripts/vendor/zepto.js 
    create javascripts/foundation/foundation.js 
    create index.html 
+DEPRECATION WARNING on line 224 of /home/dallen/.rvm/gems/ruby-2.0.0-p353@writeadapt/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss:
+Assigning to global variable "$default-float" by default is deprecated.
+In future versions of Sass, this will create a new local variable.
+If you want to assign to the global variable, use "$default-float: left !global" instead.
+
+DEPRECATION WARNING on line 225 of /home/dallen/.rvm/gems/ruby-2.0.0-p353@writeadapt/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss:
+Assigning to global variable "$opposite-direction" by default is deprecated.
+In future versions of Sass, this will create a new local variable.
+If you want to assign to the global variable, use "$opposite-direction: right !global" instead.
+
    create _site/stylesheets/app.css 
 
 Now you're awestruct!
@@ -96,9 +114,68 @@ or, simply:
 
 then visit your site at: http://localhost:4242
 
-Create file: /path/to/writeadapt/_config/site.yml
-Create file: /path/to/writeadapt/_layouts/base.html.haml
-Create file: /path/to/writeadapt/index.html.haml
+Create file: /home/dallen/tmp/awestruct/writeadapt/_config/site.yml
+Create file: /home/dallen/tmp/awestruct/writeadapt/_layouts/base.html.haml
+Create file: /home/dallen/tmp/awestruct/writeadapt/index.html.haml
+....
+--
+
+[.topic.source]
+== Setup Gemfile
+
+ $ cat > Gemfile << LINES
+ source 'https://rubygems.org'
+ gem 'awestruct', '0.5.4.rc3'
+ gem 'asciidoctor', '0.1.4'
+ gem 'tilt', '1.4.1'
+ gem 'rake', '>= 0.9.2'
+ gem 'git', '1.2.6'
+ LINES
+
+NOTE: On Windows, run +notepad Gemfile+, remove all text and paste the content *between* +LINES+ from above.
+
+[.topic.source]
+== Lock dependencies
+
+ $ gem update bundler
+ $ bundle install
+
+[.incremental]
+--
+[max-height=282]
+.Console output
+....
+Fetching: bundler-1.3.5.gem (100%)
+Successfully installed bundler-1.3.5
+1 gem installed
+
+Fetching gem metadata from https://rubygems.org/...
+Resolving dependencies...
+Installing rake (10.1.0)
+Using asciidoctor (0.1.4)
+Installing sass (3.2.12)
+Using bootstrap-sass (3.0.2.1)
+Using chunky_png (1.2.9)
+Installing fssm (0.2.10)
+Installing compass (0.12.2)
+Using compass-960-plugin (0.10.4)
+Using tilt (1.4.1)
+Using haml (4.0.4)
+Using rb-fsevent (0.9.3)
+Using ffi (1.9.3)
+Using rb-inotify (0.9.2)
+Using rb-kqueue (0.2.0)
+Installing listen (1.3.1)
+Using mime-types (1.25)
+Using nokogiri (1.5.10)
+Using rack (1.5.2)
+Using rest-client (1.6.7)
+Using ruby-s3cmd (0.1.5)
+Using zurb-foundation (4.3.2)
+Using awestruct (0.5.4.rc3)
+Using bundler (1.3.5)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
 ....
 --
 
@@ -140,5 +217,6 @@ Create file: /path/to/writeadapt/index.html.haml
 
 // end::content[]
 
-== Next: Install Rake and Bundler
+//== Next: Install Rake and Bundler
+== Next: Preview Site
 

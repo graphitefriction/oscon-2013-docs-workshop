@@ -147,7 +147,7 @@ IMPORTANT: Make sure to remove the +%hr+ under the +%h1+.
       %li.name
         %h1
           %a(href="#{site.ctx_path}/")
-            =Asciidoctor.render(site.name, :doctype => :inline)
+            =Asciidoctor.render site.name, :doctype => :inline
 ----
 
 [.topic.source]

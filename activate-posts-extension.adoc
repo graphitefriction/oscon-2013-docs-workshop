@@ -151,14 +151,14 @@ layout: base
 == Create a new post
 
 [source,asciidoc]
-.+posts/docs-workshop-oscon-2013.adoc+
+.+posts/docs-workshop-rwx-2013.adoc+
 ----
-= Docs Workshop at OSCON 2013
+= Docs Workshop at RWX 2013
 Author Name
-2013-07-22
-:awestruct-tags: [conference, oscon]
+2013-12-04
+:page-tags: [conference, rwx]
 
-Content of first post, reporting from OSCON!
+Content of first post, reporting from RWX!
 ----
 
 TIP: The default layout for a post is +post+, so you don't have to specify it in the AsciiDoc header.

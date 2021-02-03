@@ -46,14 +46,21 @@ Dan Allen
 [source,yaml]
 .+_config/site.yml+
 ----
-edit_base_url: https://github.com/{username}/writeadapt-{username}/edit/master
-raw_base_url: https://github.com/{username}/writeadapt-{username}/raw/master
-log_base_url: https://github.com/{username}/writeadapt-{username}/commits/master
+edit_base_url: https://github.com/%USERNAME%/writeadapt-%USERNAME%/edit/master
+raw_base_url: https://github.com/%USERNAME%/writeadapt-%USERNAME%/raw/master
+log_base_url: https://github.com/%USERNAME%/writeadapt-%USERNAME%/commits/master
 ----
 
+== !
+
+[{title-off}, crole=band]
+image::pull-requestable-docs.png[]
+
+////
 [.topic.source]
 == Clean and preview site to see changes
 
  $ rake clean preview
+////
 
 // end::content[]

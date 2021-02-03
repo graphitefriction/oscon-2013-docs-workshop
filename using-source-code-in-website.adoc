@@ -50,18 +50,25 @@ asciidoctor:
     coderay-css: style
 
 [.topic.source]
-== Add CodeRay gem to Gemfile
+== Add CodeRay gem
+//to Gemfile
 
 [source,ruby]
-.+Gemfile+ (partial)
+.+Gemfile+
 ----
+# append
 gem 'coderay'
 ----
 
+.Install new gems
+ $ bundle install
+
+////
 [.topic.source]
 == Install new gems
 
  $ bundle install
+////
 
 [.topic.source]
 == Add source code to page
@@ -72,7 +79,7 @@ gem 'coderay'
 ----
 require 'asciidoctor'
 
-puts Asciidoctor.render('Write__Adapt__', :doctype => :inline)
+puts Asciidoctor.render 'Write__Adapt__', :doctype => :inline
 ----
 ....
 

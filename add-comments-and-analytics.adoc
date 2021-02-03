@@ -41,7 +41,7 @@ extension Awestruct::Extensions::Disqus.new
 
 [source,yaml]
 ----
-disqus: writeadapt-{username}
+disqus: writeadapt-%USERNAME%
 disqus_generate_id: true
 disqus_developer: true
 ----

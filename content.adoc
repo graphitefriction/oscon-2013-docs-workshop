@@ -31,17 +31,22 @@ image::blob_content.png[]
 == !
 
 [.statement]
-*Chunk* and *Clump*
+{next-label} +
+Markdown to AsciiDoc
 
-== The Spreadsheet of Doom, Death, and Horror
-
-[.relax-y, {title-off}]
-image::doom_sheet.png[]
+include::convert-markdown-to-asciidoc.adoc[tags=content]
 
 == !
 
 [.statement]
-Break your *content* into *types*
+*Chunk* and *Clump*
+
+////
+== The Spreadsheet of Doom, Death, and Horror
+
+[.relax-y, {title-off}]
+image::doom_sheet.png[]
+////
 
 == !
 
@@ -63,12 +68,19 @@ Break your *content* into *types*
 == !
 
 [.statement]
+Break your *content* into *types*
+
+== !
+
+[.statement]
 *Clump* similar *content* across your project
 
+////
 == !
 
 [{title-off}]
 image::attribute.png[]
+////
 
 == !
 

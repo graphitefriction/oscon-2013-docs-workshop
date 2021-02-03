@@ -437,7 +437,7 @@ IMPORTANT: Also remove the normalize.css link from +_layouts/base.html.haml+.
 ----
       %li.name
         %h1
-          %a(href="#{site.ctx_path}/")=Asciidoctor.render(site.name, :doctype => :inline)
+          %a(href="#{site.ctx_path}/")=Asciidoctor.render site.name, :doctype => :inline
 ----
 
 .Clean and preview site to see changes
@@ -628,7 +628,7 @@ gem 'coderay'
 ----
 require 'asciidoctor'
 
-puts Asciidoctor.render('Write__Adapt__', :doctype => :inline)
+puts Asciidoctor.render 'Write__Adapt__', :doctype => :inline
 ----
 ....
 

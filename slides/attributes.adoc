@@ -2,8 +2,8 @@
 :experimental:
 :icons: font
 :imagesdir: ../images
-:source-highlighter: highlightjs
 //:source-highlighter: coderay
+:source-highlighter: highlightjs
 :language: no-highlight
 :macros-on: subs="macros"
 :caption-off: caption=""
